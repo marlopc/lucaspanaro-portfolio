@@ -1,0 +1,17 @@
+.button {
+  font-family: "Inconsolata", monospace;
+  font-size: 20px;
+  background-color: transparent;
+  transition: background-color 400ms;
+  width: max-content;
+  height: max-content;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1.5px solid var(--main-color);
+  color: var(--main-color)
+}
+
+.button:hover {
+  background-color: var(--main-color);
+  color: black;
+}

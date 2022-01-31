@@ -1,0 +1,214 @@
+.container {
+  padding: 120px 0;
+}
+
+.stack_background {
+  margin: 0 auto;
+  padding: 15px 15px 0;
+  background-color: var(--main-color);
+  transition: all 200ms;
+  opacity: 0;
+  box-shadow: 0px 4px 6px #3535359c;
+  min-height: 45vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.switch {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.switch ul {
+  list-style: none;
+  display: flex;
+  width: 90%;
+  max-width: 540px;
+  justify-content: space-between;
+}
+
+.ns {
+  cursor: pointer;
+}
+
+.ns span {
+  padding: 0;
+  margin: 0;
+  font-family: var(--sans-font);
+  color: var(--inner-font-color);
+  font-size: 14px;
+}
+
+.s {
+  border-bottom: 2px solid var(--inner-font-color);
+}
+
+.s span {
+  font-style: normal;
+  transform: translateY(-2px);
+  transition: all 250ms;
+}
+
+.stack_data {
+  display: flex;
+  position: relative;
+  opacity: 0;
+  column-gap: 25px;
+  transform: translateY(80px);
+  height: 100%;
+  transition: all 550ms ease-in-out;
+  padding-top: 85px;
+  align-items: center;
+}
+
+.stack_data_s {
+  position: relative;
+  z-index: 99;
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 550ms ease-in-out;
+}
+
+.stack_outer {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  place-items: center;
+  overflow: hidden;
+  padding-bottom: 85px;
+  position: relative;
+  min-height: 35vh;
+  flex-grow: 1;
+}
+
+.stack_outer > * {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+}
+
+.stack_icons {
+  display: flex;
+  flex-wrap: wrap;
+  width: max-content;
+  max-width: 95vw;
+  justify-content: center;
+  margin: 0 auto;
+  transform: translate(-10px ,38px);
+  padding: 5px;
+  background-color: var(--main-color);
+  box-shadow: 10px 10px 1px #0000003b;
+}
+
+.icon {
+  position: relative;
+  top: 0px;
+  width: 100px;
+  transition: top 350ms ease-in-out, filter 350ms ease-in-out;
+}
+
+.icon_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon_container span {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(-55px);
+  font-family: var(--sans-font);
+  color: var(--inner-font-color);
+  transition: opacity 200ms ease-in-out;
+}
+
+.icon_container:hover .icon {
+  top: -15px;
+}
+
+.icon_container:hover span {
+  opacity: 1;
+}
+
+.icon path {
+  transition: fill 350ms;
+  fill: var(--background-color);
+}
+
+.icon_container:hover .html_icon path {
+  fill: #E44D26;
+}
+
+.icon_container:hover .css_icon path {
+  fill: #1572B6;
+}
+
+.icon_container:hover .js_icon path {
+  fill: #F0DB4F;
+}
+
+.icon_container:hover .next_icon path {
+  fill: black;
+}
+
+.icon_container:hover .mui_icon path {
+  fill: #1FA6CA;
+}
+
+.react_icon g circle {
+  transition: fill 350ms;
+  fill: var(--background-color);
+}
+
+.icon_container:hover .react_icon g > * {
+  fill: #61DAFB;
+}
+
+.icon_container:hover .node_icon path {
+  fill: #83CD29;
+}
+
+.icon_container:hover .express_icon path {
+  fill: black;
+}
+
+.icon_container:hover .sequelize_icon path {
+  fill: #2f406a;
+}
+
+.icon_container:hover .mongo_icon path {
+  fill: #4FAA41;
+}
+
+.icon_container:hover .postgre_icon path {
+  fill: #336791;
+}
+
+@media (max-width: 943px) {
+  .stack_data {
+    column-gap: 4vw;
+    height: 160px;
+  }
+
+  .icon {
+    width: 60px;
+  }
+}
+
+@media (max-width: 743px) {
+  .stack_data {
+    column-gap: 4vw;
+    height: 160px;
+  }
+
+  .icon {
+    width: 40px;
+  }
+}
+
+@media (max-width: 440px) {
+  .stack_data {
+    column-gap: 8px;
+  }
+}
+

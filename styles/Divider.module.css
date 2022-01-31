@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.sign span {
+  font-family: var(--mono-font);
+  color: var(--main-color);
+  font-style: italic;
+  font-size: 18px;
+}
+
+.divider_wing {
+  display: inline;
+  margin: 0 auto;
+  width: 25vw;
+  height: 1px;
+  background-color: var(--main-color);
+}

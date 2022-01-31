@@ -1,0 +1,119 @@
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 10vh 15vw;
+  height: 95vh;
+  overflow-x: hidden;
+  align-items: flex-start;
+}
+
+.greeting {
+  margin: 0;
+  font-family: var(--sans-font);
+  color: var(--main-color);
+  animation: fade-in-right 600ms forwards;
+  font-size: 18px;
+}
+
+.name {
+  font-family: var(--sans-font);
+  font-size: 70px;
+  margin: 0 0 10px;
+  color: var(--main-color);
+  line-height: 65px;
+  height: max-content;
+  animation: fade-in-right 900ms forwards;
+  word-wrap: break-word;
+  max-width: 290px;
+}
+
+.dev {
+  font-family: var(--sans-font);
+  color: var(--main-color);
+  font-size: 28px;
+  width: max-content;
+  padding: 0 5px 0 0;
+  margin: 0;
+  background: linear-gradient(to left, transparent 50%, var(--main-color) 50%) right;
+  background-size: 200%;
+  transition: .5s ease-out;
+  animation: fade-in-right 1500ms forwards;
+}
+
+.devDot {
+  color: var(--main-color);
+}
+
+.dev:hover {
+  font-style: italic;
+  background-position: left;
+  color: var(--inner-font-color);
+}
+
+.dev:hover .devDot {
+  color: black;
+}
+
+.paragraph {
+  color: var(--main-color);
+  margin: 0;
+  padding: 20px 0 0 0;
+  font-size: 1rem;
+  font-family: var(--mono-font);
+  animation: fade-in-right 1700ms forwards;
+  font-weight: bold;
+  max-width: 450px;
+}
+
+.scrollDown {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 20vh;
+  animation: fade-in-up 2.2s;
+  align-self: center;
+}
+
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(4vw);
+  };
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  };
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(3vh);
+  };
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  };
+}
+
+.scrollDown span {
+  color: var(--main-color);
+  font-family: var(--sans-font);
+  cursor: pointer;
+}
+
+@media (max-width: 360px) {
+  .headerContainer {
+    padding: 4vh 10vw;
+    width: 100%;
+  }
+
+  .name {
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  .scrollDown {
+    height: 12vh;  
+  }
+}

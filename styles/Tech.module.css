@@ -1,0 +1,6 @@
+.techSpan {
+  font-size: 14px;
+  font-family: var(--mono-font);
+  padding: 2px 5px;
+  color: aliceblue;
+}

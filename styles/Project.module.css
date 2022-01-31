@@ -1,0 +1,159 @@
+.container {
+  width: 33.3%;
+  max-width: 93vw;
+  transition: transform 250ms;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  margin: 0;
+  display: flex;
+  width: 290px;
+}
+
+.name span {
+  margin: 5px 0;
+  padding: 0;
+  font-size: 15px;
+  font-family: var(--sans-font);
+  color: var(--main-color);
+  height: 24px;
+}
+
+.container:hover .name span {
+  color: var(--main-color);
+}
+
+.overflow {
+  overflow: hidden;
+  position: relative;
+}
+
+.image {
+  position: relative;
+  width: 290px;
+  height: 219.7px;
+  filter: grayscale(1);
+  transition: all 200ms;
+  z-index: 999;
+  box-shadow: 0px 1px 5px #3e494bb2;
+}
+
+.container:hover {
+  position: relative;
+  transform: translate(-5px, -5px);
+}
+
+.container:hover .image {
+  filter: grayscale(0);
+  transform: scale(1.2);
+  transition: transform 200ms;
+}
+
+.stackContainer {
+  position: relative;
+  display: flex;
+  top: -50px;
+  width: 290px;
+  transition: all 300ms;
+  background-color: var(--main-color);
+  flex-wrap: wrap;
+  opacity: 0;
+  box-shadow: 0px 3px 5px #3e494bb2;
+}
+
+.links {
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+  background: #00000098;
+  width: 290px;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.links a {
+  font-size: 35px;
+  color: var(--inner-font-color);
+  transition: color 200ms;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.links a span {
+  padding-top: 5px;
+  font-size: 15px;
+  font-family: var(--mono-font);
+}
+
+.links > :first-child {
+  font-size: 33px;
+}
+
+.links a:hover {
+  color: var(--main-color);
+}
+
+.container:hover .stackContainer {
+  top: 5px;
+  opacity: 1;
+}
+
+.container:hover .links {
+  opacity: 1;
+}
+
+@media (min-width: 1830px) {
+  .container {
+    width: 25%;
+  }
+}
+
+@media (max-width: 1290px) {
+  .container {
+    width: 50%;
+  }
+}
+
+@media (max-width: 860px) {
+  .container {
+    width: 100%;
+  }
+  .name h4 {
+    color: var(--main-color);
+  }
+
+  .links {
+    justify-content: right;
+    align-items: flex-end;
+    opacity: 1;
+    background: #4b4b4b44;
+  }
+
+  .links a {
+    margin-bottom: 5px;
+  }
+
+  .links > :nth-child(2) {
+    margin-right: 10px;
+  }
+
+  .stackContainer {
+    top: 5px;
+    opacity: 1;
+    box-shadow: 0px 3px 5px #3e494bb2;
+  }
+
+  .image {
+    filter: none;
+  }
+}
