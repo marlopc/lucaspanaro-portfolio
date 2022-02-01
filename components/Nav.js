@@ -1,37 +1,19 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styles from '../styles/Nav.module.css';
 import Link from 'next/link';
 import useWindowSize from '../hooks/useWindowSize';
-import { useState } from 'react';
 import Burger from './Burger';
+import useScrollDirection from '../hooks/useScrollDirection';
 
 const Nav = ({ toggleMenu, menuIsOpen, navNames }) => {
   const [isHidden, setIsHidden] = useState(false);
   const size = useWindowSize();
-  const [y, setY] = useState(0);
 
-  const handleNavigation = useCallback(e => {
-    const window = e.currentTarget;
-    if (y > window.scrollY) {
-      setIsHidden(false);
-    } else if (y < window.scrollY) {
-      setIsHidden(true);
-    }
-    setY(window.scrollY);
-  }, [y]);
-
-  useEffect(() => {
-    setY(window.scrollY);
-    window.addEventListener('scroll', handleNavigation);
-
-    return () => {
-      window.removeEventListener('scroll', handleNavigation);
-    };
-  }, [handleNavigation]);
+  useScrollDirection(setIsHidden);
 
   return (
     <>
-      <div className={styles.navHold}/>
+      <div className={styles.navHold} name={navNames.home.toLowerCase()} />
       <div className={isHidden && (!menuIsOpen || size.width > 950) ? styles.navContainerHidden : styles.navContainer}>
         <Link href={`/#${navNames.home.toLowerCase()}`}>
           <a>

@@ -63,6 +63,7 @@
   flex-wrap: wrap;
   opacity: 0;
   box-shadow: 0px 3px 5px #3e494bb2;
+  padding: 3px 0;
 }
 
 .links {
@@ -128,6 +129,7 @@
   .container {
     width: 100%;
   }
+  
   .name h4 {
     color: var(--main-color);
   }
@@ -155,5 +157,18 @@
 
   .image {
     filter: none;
+  }
+}
+
+@media (max-width: 300px) {
+  .stackContainer,
+  .image,
+  .links,
+  .name {
+    width: 90vw;
+  }
+
+  .image > div > img {
+    object-fit: cover;
   }
 }

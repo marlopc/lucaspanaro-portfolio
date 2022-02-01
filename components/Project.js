@@ -3,9 +3,8 @@ import useObserver from '../hooks/useObserver';
 import styles from '../styles/Project.module.css';
 import Tech from './Tech';
 import Image from 'next/image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import ExternalLink from './icons/ExternalLink';
+import GitHub from './icons/GitHub';
 
 
 const Project = ({ project }) => {
@@ -27,14 +26,14 @@ const Project = ({ project }) => {
         </div>
         <div className={styles.links}>
           {project.link && (
-            <a href={project.link || '/'} target='_blank' rel='noopener noreferrer'>
-              <FontAwesomeIcon icon={faExternalLinkAlt} />
+            <a href={project.link} target='_blank' rel='noopener noreferrer'>
+              <ExternalLink size={34}/>
               <span>Visit</span>
             </a>
           )}
           {project.repo && (
-            <a href={project.repo || '/'} target='_blank' rel='noopener noreferrer'>
-              <FontAwesomeIcon icon={faGithub} />
+            <a href={project.repo} target='_blank' rel='noopener noreferrer'>
+              <GitHub size={34}/>
               <span>Repo</span>
             </a>
           )}

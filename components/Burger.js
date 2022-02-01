@@ -1,5 +1,5 @@
 import styles from '../styles/Burger.module.css';
-import React, { useContext } from 'react';
+import React from 'react';
 
 const Burger = ({ toggleMenu, menuIsOpen }) => {
 

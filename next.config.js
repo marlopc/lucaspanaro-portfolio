@@ -2,9 +2,9 @@ module.exports = {
   reactStrictMode: true,
   i18n: {
     locales: ["en-US", "es-ES"],
-    defaultLocale: "en-US"
+    defaultLocale: "es-ES"
   },
   images: {
-    domains: ["res.cloudinary.com", "picsum.photos"]
+    domains: ["picsum.photos"]
   },
 }

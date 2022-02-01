@@ -1,7 +1,8 @@
 import styles from '../styles/Footer.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { useRouter } from 'next/dist/client/router';
+import GitHub from './icons/GitHub';
+import Instagram from './icons/Instagram';
+import LinkedIn from './icons/LinkedIn';
 
 const footerContent = {
   'en-US': {
@@ -35,7 +36,9 @@ const Footer = () => {
               rel='noreferrer'
             >
               <span>Github</span>
-              <span><FontAwesomeIcon icon={faGithub}/></span>
+              <span>
+                <GitHub size={40} />
+              </span>
             </a>
             <a 
               href='https://www.linkedin.com/in/lucas-panaro'
@@ -43,7 +46,9 @@ const Footer = () => {
               rel='noreferrer'
             >
               <span>LinkedIn</span>
-              <span><FontAwesomeIcon icon={faLinkedinIn}/></span>
+              <span>
+                <LinkedIn size={40} />
+              </span>
             </a>
             <a 
               href='https://www.instagram.com/lucaspanaro1'
@@ -51,7 +56,9 @@ const Footer = () => {
               rel='noreferrer'
             >
               <span>Instagram</span>
-              <span><FontAwesomeIcon icon={faInstagram}/></span>
+              <span>
+                <Instagram size={40} />
+              </span>
             </a>
           </div>
         </div>

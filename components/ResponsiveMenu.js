@@ -15,7 +15,7 @@ const ResponsiveMenu = ({ menuIsOpen, toggleMenu, navNames }) => {
         <ul className={styles.menuLinksUl}>
           <li>
               <Link href={`/#${navNames.home.toLowerCase()}`}>
-                <a>
+                <a onClick={toggleMenu}>
                   <div>
                     {navNames.home}
                   </div>
@@ -24,7 +24,7 @@ const ResponsiveMenu = ({ menuIsOpen, toggleMenu, navNames }) => {
             </li>
             <li>
               <Link href={`/#${navNames.projects.toLowerCase()}`}>
-                <a>
+                <a onClick={toggleMenu}>
                   <div>
                     {navNames.projects}
                   </div>
@@ -33,7 +33,7 @@ const ResponsiveMenu = ({ menuIsOpen, toggleMenu, navNames }) => {
             </li>
             <li>
               <Link href={`/#${navNames.contact.toLowerCase()}`}>
-                <a>
+                <a onClick={toggleMenu}>
                   <div>
                     {navNames.contact}
                   </div>

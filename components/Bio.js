@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import styles from '../styles/Bio.module.css';
 import useObserver from '../hooks/useObserver';
 
@@ -51,7 +51,11 @@ const Bio = ({ context }) => {
               {about_4} <br/>
             </p>
           </div>
-          <img className={styles.bio_image} src='https://picsum.photos/350/350' alt='Lucas Panaro'/>
+          <img
+            className={styles.bio_image}
+            src='/assets/images/lucas.jpg'
+            alt='Lucas Panaro'
+          />
         </div>
       </div>
     </div>

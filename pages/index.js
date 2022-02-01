@@ -4,31 +4,35 @@ import Projects from '../components/Projects';
 import Bio from '../components/Bio';
 import Contact from '../components/Contact';
 import Stack from '../components/Stack';
+import SEO from '../components/SEO';
 
 const sectionNames = {
   'en-US': {
-    home_anchor: 'home',
     t_bio: 'Bio',
     t_stack: 'Stack',
     t_projects: 'Projects',
-    t_contact: 'Contact'
+    t_contact: 'Contact',
+    description: 'Lucas Panaro\'s personal portfolio, with contact info, and projects',
+    title: 'Lucas Panaro\'s portfolio',
   },
   'es-ES': {
-    home_anchor: 'inicio',
     t_bio: 'Bio',
     t_stack: 'Tecnologías',
     t_projects: 'Proyectos',
-    t_contact: 'Contacto'
+    t_contact: 'Contacto',
+    description: 'Portfolio personal de Lucas Panaro, puedes ver sus proyectos y enviarle un mensaje!',
+    title: 'Portfolio de Lucas Panaro',
   }
 };
 
 const Home = ({ context, email_env }) => {
   const { locale } = context;
-  const { home_anchor, t_bio, t_stack, t_projects, t_contact } = sectionNames[locale];
+  const { t_bio, t_stack, t_projects, t_contact, description, title } = sectionNames[locale];
+
 
   return (
     <div>
-      <a name={home_anchor}/>
+      <SEO locale={locale} description={description} title={title}/>
       <Header context={context}/>
       <Divider section={t_bio} />
       <Bio context={context} />
@@ -48,7 +52,7 @@ export const getStaticProps = async (context) => {
   return {
     props: {
       context,
-      email_env
+      email_env,
     }
   };
 };
