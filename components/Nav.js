@@ -61,7 +61,7 @@ const Nav = ({ toggleMenu, menuIsOpen }) => {
               <a 
                 href={process.env.NEXT_PUBLIC_CV_DRIVE}
                 target='_blank'
-                rel='noreferrer'
+                rel='noopener noreferrer'
               >
                 <div>
                   {navNames.resume}

@@ -46,9 +46,9 @@ const ResponsiveMenu = ({ menuIsOpen, toggleMenu }) => {
             </li>
             <li>
               <a 
-                href='https://drive.google.com/file/d/14gebX90Mmv1xyI5K0MpHqLdBidVGU2o7/view'
+                href={process.env.NEXT_PUBLIC_CV_DRIVE}
                 target='_blank'
-                rel='noreferrer'
+                rel='noopener noreferrer'
               >
                 <div>
                   {navNames.resume}
