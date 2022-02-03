@@ -138,15 +138,8 @@
     justify-content: right;
     align-items: flex-end;
     opacity: 1;
-    background: #4b4b4b44;
-  }
-
-  .links a {
-    margin-bottom: 5px;
-  }
-
-  .links > :nth-child(2) {
-    margin-right: 10px;
+    background: #0e0e0e6e;
+    padding: 0 10px 10px 0;
   }
 
   .stackContainer {

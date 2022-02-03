@@ -10,17 +10,22 @@ const Custom500 = () => {
   const { heading, subheading, link } = custom500Content[locale];
 
   return (
-    <div className={styles.container}>
-      <h1 className='fade_in_up'>{heading}</h1>
-      <div className='fade_in_up_200'>
-        <p>{subheading}</p>
-        <Link href='/'>
-          <a className={styles.link}>
-            {link}<span><ArrowRight /></span>   
-          </a>
-        </Link>
+    <>
+      <Head>
+        <meta name="googlebot" content="noindex" />
+      </Head>
+      <div className={styles.container}>
+        <h1 className='fade_in_up'>{heading}</h1>
+        <div className='fade_in_up_200'>
+          <p>{subheading}</p>
+          <Link href='/'>
+            <a className={styles.link}>
+              {link}<span><ArrowRight /></span>   
+            </a>
+          </Link>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

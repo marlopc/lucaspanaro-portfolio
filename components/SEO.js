@@ -5,11 +5,12 @@ import { seoContent } from '../lib/translations';
 
 const SEO = () => {
   const { locale } = useLocale();
-  const { title, description } = seoContent[locale];
+  const { title, description, keywords } = seoContent[locale];
   const openGraphLocale = locale.replace('-', '_').toLowerCase();
 
   return (
     <Head>
+      <meta name="keywords" content={keywords} />
       <meta name="description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
