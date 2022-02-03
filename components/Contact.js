@@ -1,9 +1,9 @@
-import { useRef, useState } from "react";
-import useForm from "../hooks/useForm";
-import useLocale from "../hooks/useLocale";
-import useObserver from "../hooks/useObserver";
-import styles from "../styles/Contact.module.css";
-import { contactContent } from "../lib/translations";
+import React, { useRef, useState } from 'react';
+import styles from '../styles/Contact.module.css';
+import useForm from '../hooks/useForm';
+import useLocale from '../hooks/useLocale';
+import useObserver from '../hooks/useObserver';
+import { contactContent } from '../lib/translations';
 
 const initialForm = {
   name: "",

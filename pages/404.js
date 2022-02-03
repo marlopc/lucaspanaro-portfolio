@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import useLocale from '../hooks/useLocale';
 import styles from '../styles/ErrorPage.module.css';
+import useLocale from '../hooks/useLocale';
 import ArrowRight from '../components/icons/ArrowRight';
 import { custom404Content } from '../lib/translations';
 

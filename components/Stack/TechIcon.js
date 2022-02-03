@@ -1,10 +1,10 @@
 import React from 'react';
-import useLocale from '../../hooks/useLocale';
 import styles from '../../styles/Stack.module.css';
+import useLocale from '../../hooks/useLocale';
 import ExternalLink from '../icons/ExternalLink';
 import { techIconContent } from '../../lib/translations';
 
-const TechIcon = ({ label, href = false, icon } = {}) => {
+const TechIcon = ({ label, href = false, icon }) => {
   const { locale } = useLocale();
 
   const { goto } = techIconContent[locale];

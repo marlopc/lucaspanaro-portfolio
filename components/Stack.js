@@ -1,6 +1,6 @@
-import { useRef, useState } from 'react';
-import useObserver from '../hooks/useObserver';
+import React, { useRef, useState } from 'react';
 import styles from '../styles/Stack.module.css';
+import useObserver from '../hooks/useObserver';
 import CSSIcon from './Stack/svg/CSSIcon';
 import ExpressIcon from './Stack/svg/ExpressIcon';
 import HTMLIcon from './Stack/svg/HTMLIcon';

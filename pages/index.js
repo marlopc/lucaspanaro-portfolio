@@ -1,5 +1,7 @@
+import React from 'react';
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import useLocale from '../hooks/useLocale';
 import Header from '../components/Header';
 import Divider from '../components/Divider';
 import Projects from '../components/Projects';
@@ -7,7 +9,6 @@ import Bio from '../components/Bio';
 import Contact from '../components/Contact';
 import Stack from '../components/Stack';
 import SEO from '../components/SEO';
-import useLocale from '../hooks/useLocale';
 import { sectionNames } from '../lib/translations';
 
 const Home = ({ email_env, projects }) => {

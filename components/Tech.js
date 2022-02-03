@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from '../styles/Tech.module.css';
 
 const Tech = ({ tech }) => {

@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import styles from '../styles/Nav.module.css';
 import Link from 'next/link';
-import useWindowSize from '../hooks/useWindowSize';
-import Burger from './Burger';
-import useScrollDirection from '../hooks/useScrollDirection';
+import useMediaQuery from '../hooks/useMediaQuery';
 import useLocale from '../hooks/useLocale';
+import useScrollDirection from '../hooks/useScrollDirection';
+import Burger from './Burger';
 import { navContent } from '../lib/translations';
 
 const Nav = ({ toggleMenu, menuIsOpen }) => {
   const [isHidden, setIsHidden] = useState(false);
   const { locale } = useLocale();
-  const size = useWindowSize();
+  const isDesktopLikeScreen = useMediaQuery('(min-width: 950px)');
   const navNames = navContent[locale];
 
   useScrollDirection(setIsHidden);
@@ -18,7 +18,7 @@ const Nav = ({ toggleMenu, menuIsOpen }) => {
   return (
     <>
       <div className={styles.navHold} name={navNames.home.toLowerCase()} />
-      <div className={isHidden && (!menuIsOpen || size.width > 950) ? styles.navContainerHidden : styles.navContainer}>
+      <div className={isHidden && (!menuIsOpen || isDesktopLikeScreen) ? styles.navContainerHidden : styles.navContainer}>
         <Link href={`/#${navNames.home.toLowerCase()}`}>
           <a>
             <div className={styles.navLogo}>
@@ -28,7 +28,7 @@ const Nav = ({ toggleMenu, menuIsOpen }) => {
             </div>
           </a>
         </Link>
-        {size.width > 950 ? (
+        {isDesktopLikeScreen ? (
           <ul className={styles.navLinksUl}>
             <li>
               <Link href={`/#${navNames.home.toLowerCase()}`}>

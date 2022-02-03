@@ -1,11 +1,11 @@
-import { useRef } from 'react';
-import useObserver from '../hooks/useObserver';
-import styles from '../styles/Project.module.css';
-import Tech from './Tech';
+import React, { useRef } from 'react';
 import Image from 'next/image';
+import styles from '../styles/Project.module.css';
+import useObserver from '../hooks/useObserver';
+import useLocale from '../hooks/useLocale';
+import Tech from './Tech';
 import ExternalLink from './icons/ExternalLink';
 import GitHub from './icons/GitHub';
-import useLocale from '../hooks/useLocale';
 import { projectContent } from '../lib/translations';
 
 const Project = ({ project }) => {

@@ -1,8 +1,9 @@
+import React from 'react';
 import styles from '../styles/Footer.module.css';
+import useLocale from '../hooks/useLocale';
 import GitHub from './icons/GitHub';
 import Instagram from './icons/Instagram';
 import LinkedIn from './icons/LinkedIn';
-import useLocale from '../hooks/useLocale';
 import { footerContent } from '../lib/translations';
 
 const Footer = () => {

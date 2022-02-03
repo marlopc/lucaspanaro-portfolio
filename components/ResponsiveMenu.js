@@ -1,6 +1,6 @@
-import styles from '../styles/Menu.module.css';
+import React from 'react';
 import Link from 'next/link';
-import useWindowSize from '../hooks/useWindowSize';
+import styles from '../styles/Menu.module.css';
 import useLocale from '../hooks/useLocale';
 import { navContent } from '../lib/translations';
 
@@ -8,10 +8,9 @@ const ResponsiveMenu = ({ menuIsOpen, toggleMenu }) => {
   const { locale } = useLocale();
 
   const navNames = navContent[locale];
-  const size = useWindowSize();
 
   return (
-    size.width < 950 && <>
+    <>
       <div 
         className={menuIsOpen ? styles.background : styles.background_hidden}
         onClick={toggleMenu}

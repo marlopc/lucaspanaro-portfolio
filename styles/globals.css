@@ -49,6 +49,12 @@ textarea:focus {
   outline: 3px solid #1a2131;
 }
 
+button {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
 .sectionContainer {
   display: flex;
   flex-direction: column;

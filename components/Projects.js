@@ -1,3 +1,4 @@
+import React from 'react';
 import style from '../styles/Projects.module.css';
 import Project from './Project';
 

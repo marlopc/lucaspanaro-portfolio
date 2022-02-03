@@ -1,7 +1,8 @@
-import styles from "../styles/Header.module.css";
-import Link from "next/link";
-import useLocale from "../hooks/useLocale";
-import { headerContent } from "../lib/translations";
+import React from 'react';
+import Link from 'next/link';
+import styles from '../styles/Header.module.css';
+import useLocale from '../hooks/useLocale';
+import { headerContent } from '../lib/translations';
 
 const Header = () => {
   const { locale } = useLocale();

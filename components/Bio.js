@@ -1,14 +1,15 @@
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import styles from '../styles/Bio.module.css';
 import useObserver from '../hooks/useObserver';
 import useLocale from '../hooks/useLocale';
 import { bioContent } from '../lib/translations';
 
 const Bio = () => {
-  const { locale } = useLocale();
-  const { title, about_1, about_2, about_3, about_4 } = bioContent[locale];
   const containerRef = useRef();
+  const { locale } = useLocale();
   const [animation] = useObserver(containerRef, '-150px');
+
+  const { title, about_1, about_2, about_3, about_4 } = bioContent[locale];
 
   return (
     <div className='sectionContainer'>
