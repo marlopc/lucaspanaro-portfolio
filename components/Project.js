@@ -5,14 +5,17 @@ import Tech from './Tech';
 import Image from 'next/image';
 import ExternalLink from './icons/ExternalLink';
 import GitHub from './icons/GitHub';
-
+import useLocale from '../hooks/useLocale';
+import { projectContent } from '../lib/translations';
 
 const Project = ({ project }) => {
+  const { locale } = useLocale();
+  const { visit } = projectContent[locale];
   const containerRef = useRef();
   const [animation] = useObserver(containerRef, '-150px');
 
   return (
-    <div className={`${styles.container} ${animation ? 'fade_in_up' : null}`} ref={containerRef}>
+    <div className={`${styles.container} ${animation ? 'fade_in_up' : ""}`} ref={containerRef}>
       <div className={styles.name}>
         <span>| {project.name}</span>
       </div>
@@ -28,7 +31,7 @@ const Project = ({ project }) => {
           {project.link && (
             <a href={project.link} target='_blank' rel='noopener noreferrer'>
               <ExternalLink size={34}/>
-              <span>Visit</span>
+              <span>{visit}</span>
             </a>
           )}
           {project.repo && (

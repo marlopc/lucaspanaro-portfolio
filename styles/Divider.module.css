@@ -6,17 +6,22 @@
   margin: 0 auto;
 }
 
-.sign span {
+.container > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  column-gap: 8vw;
   font-family: var(--mono-font);
   color: var(--main-color);
   font-style: italic;
   font-size: 18px;
 }
 
-.divider_wing {
-  display: inline;
-  margin: 0 auto;
+.container > span::before,
+.container > span::after {
+  content: ' ';
   width: 25vw;
   height: 1px;
-  background-color: var(--main-color);
+  background: var(--main-color);
 }

@@ -1,35 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ResponsiveMenu from './ResponsiveMenu';
 import Footer from './Footer';
 import Head from 'next/head';
 import Nav from './Nav';
-import { useRouter } from 'next/dist/client/router';
-
-const navContent = {
-  'en-US': {
-    home: 'HOME',
-    projects: 'PROJECTS',
-    contact: 'CONTACT',
-    resume: 'MY RESUME'
-  },
-  'es-ES': {
-    home: 'INICIO',
-    projects: 'PROYECTOS',
-    contact: 'CONTACTO',
-    resume: 'MI CV'
-  }
-};
 
 const Layout = ({ children }) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const [locale, setLocale] = useState('en-US');
-  const navNames = navContent[locale];
-  const router = useRouter();
-
-  useEffect(() => {
-    setLocale(router.locale);
-  }, [router]);
-
 
   const toggleMenu = () => {
     setMenuIsOpen(!menuIsOpen);
@@ -47,12 +23,10 @@ const Layout = ({ children }) => {
       <Nav 
         toggleMenu={toggleMenu} 
         menuIsOpen={menuIsOpen}
-        navNames={navNames}
       />
       <ResponsiveMenu 
         toggleMenu={toggleMenu} 
         menuIsOpen={menuIsOpen}
-        navNames={navNames}
       />
       <main>{children}</main>
       <Footer />

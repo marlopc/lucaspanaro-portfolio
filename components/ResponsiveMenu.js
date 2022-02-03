@@ -1,8 +1,13 @@
 import styles from '../styles/Menu.module.css';
 import Link from 'next/link';
 import useWindowSize from '../hooks/useWindowSize';
+import useLocale from '../hooks/useLocale';
+import { navContent } from '../lib/translations';
 
-const ResponsiveMenu = ({ menuIsOpen, toggleMenu, navNames }) => {
+const ResponsiveMenu = ({ menuIsOpen, toggleMenu }) => {
+  const { locale } = useLocale();
+
+  const navNames = navContent[locale];
   const size = useWindowSize();
 
   return (

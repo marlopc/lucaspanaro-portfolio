@@ -1,13 +1,17 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState } from 'react';
 import styles from '../styles/Nav.module.css';
 import Link from 'next/link';
 import useWindowSize from '../hooks/useWindowSize';
 import Burger from './Burger';
 import useScrollDirection from '../hooks/useScrollDirection';
+import useLocale from '../hooks/useLocale';
+import { navContent } from '../lib/translations';
 
-const Nav = ({ toggleMenu, menuIsOpen, navNames }) => {
+const Nav = ({ toggleMenu, menuIsOpen }) => {
   const [isHidden, setIsHidden] = useState(false);
+  const { locale } = useLocale();
   const size = useWindowSize();
+  const navNames = navContent[locale];
 
   useScrollDirection(setIsHidden);
 
@@ -55,7 +59,7 @@ const Nav = ({ toggleMenu, menuIsOpen, navNames }) => {
             </li>
             <li>
               <a 
-                href='https://drive.google.com/file/d/14gebX90Mmv1xyI5K0MpHqLdBidVGU2o7/view'
+                href={process.env.NEXT_PUBLIC_CV_DRIVE}
                 target='_blank'
                 rel='noreferrer'
               >

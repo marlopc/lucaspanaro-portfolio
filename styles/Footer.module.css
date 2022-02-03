@@ -19,7 +19,11 @@
 
 .footer_text p {
   padding: 0;
-  margin: 5px 0;
+  color: var(--main-color);
+}
+
+.footer_text small {
+  font-family: var(--mono-font);
   color: var(--main-color);
 }
 

@@ -1,27 +1,10 @@
 import styles from "../styles/Header.module.css";
 import Link from "next/link";
+import useLocale from "../hooks/useLocale";
+import { headerContent } from "../lib/translations";
 
-const headerContent = {
-  "en-US": {
-    greeting: "Hey! i'm",
-    scroll_text: "Scroll down to see more!",
-    paragraph_1: `I like creating solutions, and constantly learning 
-    about new technologies and best practices.`,
-    paragraph_2: `I am looking for new experiences 
-    that allow me to grow professionally, feel free to send me a message!`
-  },
-  "es-ES": {
-    greeting: "Hola! soy",
-    scroll_text: "Baja para ver más!",
-    paragraph_1: `Disfruto crear soluciones, y aprender constantemente
-    sobre nuevas tecnologías y buenas prácticas.`,
-    paragraph_2: `Busco nuevas experiencias que me permitan crecer 
-    profesionalmente, sientete libre de contactarme si quieres!`
-  }
-};
-
-const Header = ({ context }) => {
-  const { locale } = context;
+const Header = () => {
+  const { locale } = useLocale();
   const { greeting, scroll_text, paragraph_1, paragraph_2 } = headerContent[locale];
 
   return (

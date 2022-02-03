@@ -1,26 +1,32 @@
 [
   {
+    "id": 1,
     "name": "People app",
     "tech": ["React", "Typescript", "CSS"],
     "link": "https://simple-people-app.vercel.app/",
     "image": "/assets/images/projects/people.png",
     "repo": "https://github.com/marlopc/simple-people-app"
   },{
+    "id": 2,
     "name": "Portfolio",
     "tech": ["NextJS", "CSS"],
-    "image": "/assets/images/projects/lp.png"
+    "image": "/assets/images/projects/lp.png",
+    "repo": "https://github.com/marlopc/lucaspanaro-portfolio"
   }, {
+    "id": 3,
     "name": "Lo hice yo",
     "tech": ["NextJS", "MongoDB", "Mongoose", "CSS"],
     "link": "https://lo-hice-yo.vercel.app/",
     "image": "/assets/images/projects/lo-hice-yo.png"
   }, {
+    "id": 4,
     "name": "On the rocks",
     "tech": ["React", "Express", "NodeJS", "PostgreSQL", "Sequelize", "CSS"],
     "image": "/assets/images/projects/on-the-rocks.png",
     "link": "https://on-the-rocks-orcin.vercel.app/",
     "repo": "https://github.com/Iron-Liver/On-The-Rocks"
   }, {
+    "id": 5,
     "name": "Dogs app",
     "tech": ["React", "Express", "NodeJS", "PostgreSQL", "Sequelize", "CSS"],
     "image": "/assets/images/projects/dogs-app.png",

@@ -25,7 +25,7 @@ const Stack = () => {
   return (
     <div className='sectionContainer'>
       <div className={styles.container}>
-        <div className={`${styles.stack_background} ${animation ? 'fade_in_up' : null}`} ref={containerRef}>
+        <div className={`${styles.stack_background} ${animation ? 'fade_in_up' : ""}`} ref={containerRef}>
           <nav className={styles.switch}>
             <ul>
               <li 
