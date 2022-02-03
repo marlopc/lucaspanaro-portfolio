@@ -1,6 +1,7 @@
 import React from 'react';
-import useLocale from '../hooks/useLocale';
+import Head from 'next/head';
 import Link from 'next/link';
+import useLocale from '../hooks/useLocale';
 import styles from '../styles/ErrorPage.module.css';
 import ArrowRight from '../components/icons/ArrowRight';
 import { custom500Content } from '../lib/translations';
