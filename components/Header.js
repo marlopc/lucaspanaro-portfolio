@@ -23,11 +23,11 @@ const Header = () => {
       </p>
       <div className={styles.scrollDown}>
         <Link href="#bio">
-          <span>{scroll_text}</span>
+          <a>{scroll_text}</a>
         </Link>
       </div>
     </div>
   )
-}
+};
 
-export default Header
+export default Header;

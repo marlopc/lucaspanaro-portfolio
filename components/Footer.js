@@ -23,37 +23,34 @@ const Footer = () => {
               href='https://www.github.com/marlopc'
               target='_blank'
               rel='noreferrer'
+              aria-labelledby='footer-github'
             >
-              <span>Github</span>
-              <span>
-                <GitHub size={40} />
-              </span>
+              <span id='footer-github'>Github</span>
+              <GitHub size={40} />
             </a>
             <a 
               href='https://www.linkedin.com/in/lucas-panaro'
               target='_blank'
               rel='noreferrer'
+              aria-labelledby='footer-linkedin'
             >
-              <span>LinkedIn</span>
-              <span>
-                <LinkedIn size={40} />
-              </span>
+              <span id='footer-linkedin'>LinkedIn</span>
+              <LinkedIn size={40} />
             </a>
             <a 
               href='https://www.instagram.com/lucaspanaro1'
               target='_blank'
               rel='noreferrer'
+              aria-labelledby='footer-instagram'
             >
-              <span>Instagram</span>
-              <span>
-                <Instagram size={40} />
-              </span>
+              <span id='footer-instagram'>Instagram</span>
+              <Instagram size={40} />
             </a>
           </div>
         </div>
       </div>
     </>
   )
-}
+};
 
-export default Footer
+export default Footer;

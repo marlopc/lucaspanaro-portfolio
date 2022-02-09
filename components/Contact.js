@@ -105,7 +105,7 @@ const Contact = ({ emailAddress }) => {
   };
 
   return (
-    <div className="sectionContainer">
+    <section>
       <div className={styles.container}>
         <div
           className={`${styles.contact_background} ${animation ? "fade_in_up" : ""} ${loaderSend ? styles.rounded : ""}`}
@@ -182,8 +182,8 @@ const Contact = ({ emailAddress }) => {
           {showFinalMessage && <h2>{final_message}</h2>}
         </div>
       </div>
-    </div>
+    </section>
   )
-}
+};
 
-export default Contact
+export default Contact;

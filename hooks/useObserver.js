@@ -19,7 +19,7 @@ const useObserver = (ref, margin = '0px') => {
     return () => observer && observer.disconnect();
   });
 
-  return [animation, ref]
-}
+  return [animation, ref];
+};
 
 export default useObserver;

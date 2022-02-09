@@ -55,7 +55,7 @@ button {
   border: 0;
 }
 
-.sectionContainer {
+section {
   display: flex;
   flex-direction: column;
   padding: 6vh 15vw;
@@ -68,6 +68,24 @@ button {
 
 .fade_in_up_200 {
   animation: fade-in-up 800ms forwards 200ms;
+}
+
+.logo {
+  width: max-content;
+  padding: 0 20px;
+  font-family: var(--sans-font);
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+.logo span {
+  color: var(--main-color);
+}
+
+.logo p {
+  font-size: 32px;
+  padding: 5px;
+  margin: 0;
 }
 
 @keyframes fade-in-up {
@@ -87,7 +105,8 @@ button {
     height: 95vh;
   }
 
-  .sectionContainer {
+  section {
     padding: 6vh 5vw;
   }
+
 }

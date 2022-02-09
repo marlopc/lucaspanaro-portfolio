@@ -15,39 +15,26 @@
 }
 
 .switch {
-  width: 100%;
   display: flex;
-  justify-content: center;
-}
-
-.switch ul {
-  list-style: none;
-  display: flex;
-  width: 90%;
-  max-width: 540px;
   justify-content: space-between;
+  width: 90%;
+  max-width: 450px;
+  margin: 0 auto;
 }
 
 .ns {
-  cursor: pointer;
-}
-
-.ns span {
   padding: 0;
   margin: 0;
   font-family: var(--sans-font);
   color: var(--inner-font-color);
   font-size: 14px;
+  border-bottom: 2px solid transparent;
 }
 
 .s {
   border-bottom: 2px solid var(--inner-font-color);
-}
-
-.s span {
   font-style: normal;
-  transform: translateY(-2px);
-  transition: all 250ms;
+  transition: border-bottom 250ms ease, color 250ms ease;
 }
 
 .stack_data {
@@ -57,9 +44,10 @@
   column-gap: 55px;
   transform: translateY(80px);
   height: 100%;
-  transition: all 550ms ease-in-out;
   padding-top: 45px;
   align-items: center;
+  visibility: collapse;
+  transition: transform 550ms ease-in-out, opacity 550ms ease;
 }
 
 .stack_data_s {
@@ -68,7 +56,7 @@
   display: flex;
   opacity: 1;
   transform: translateY(0);
-  transition: all 550ms ease-in-out;
+  visibility: inherit;
 }
 
 .stack_outer {
@@ -108,22 +96,27 @@
 }
 
 .icon_container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 35px;
+  margin-top: 35px;
 }
 
 .icon_container > a,
 .icon_container > p {
+  position: absolute;
+  top: -50px;
   opacity: 0;
+  display: none;
   font-family: var(--sans-font);
   color: var(--inner-font-color);
   transition: opacity 200ms ease-in-out;
   text-align: center;
-  width: 0;
-  display: flex;
+  width: max-content;
   align-items: center;
+  display: flex;
   justify-content: center;
 }
 
@@ -132,10 +125,13 @@
   padding-left: 5px;
 }
 
+.icon_container:focus-within .icon,
 .icon_container:hover .icon {
   top: -15px;
 }
 
+.icon_container:focus-within a,
+.icon_container:focus-within p,
 .icon_container:hover a,
 .icon_container:hover p {
   opacity: 1;
@@ -146,22 +142,27 @@
   fill: var(--background-color);
 }
 
+.icon_container:focus-within .html_icon path,
 .icon_container:hover .html_icon path {
   fill: #E44D26;
 }
 
+.icon_container:focus-within .css_icon path,
 .icon_container:hover .css_icon path {
   fill: #1572B6;
 }
 
+.icon_container:focus-within .js_icon path,
 .icon_container:hover .js_icon path {
   fill: #F0DB4F;
 }
 
+.icon_container:focus-within .next_icon path,
 .icon_container:hover .next_icon path {
   fill: black;
 }
 
+.icon_container:focus-within .mui_icon path,
 .icon_container:hover .mui_icon path {
   fill: #1FA6CA;
 }
@@ -171,26 +172,32 @@
   fill: var(--background-color);
 }
 
+.icon_container:focus-within .react_icon g > *,
 .icon_container:hover .react_icon g > * {
   fill: #61DAFB;
 }
 
+.icon_container:focus-within .node_icon path,
 .icon_container:hover .node_icon path {
   fill: #83CD29;
 }
 
+.icon_container:focus-within .express_icon path,
 .icon_container:hover .express_icon path {
   fill: black;
 }
 
+.icon_container:focus-within .sequelize_icon path,
 .icon_container:hover .sequelize_icon path {
   fill: #2f406a;
 }
 
+.icon_container:focus-within .mongo_icon path,
 .icon_container:hover .mongo_icon path {
   fill: #4FAA41;
 }
 
+.icon_container:focus-within .postgre_icon path,
 .icon_container:hover .postgre_icon path {
   fill: #336791;
 }
@@ -224,6 +231,14 @@
 }
 
 @media (max-width: 330px) {
+  .switch {
+    width: 100%;
+  }
+
+  .switch > button > span {
+    font-size: 12px;
+  }
+
   .stack_data {
     column-gap: 15px;
     height: 160px;

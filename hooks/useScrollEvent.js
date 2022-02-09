@@ -1,11 +1,15 @@
 import { useEffect, useCallback, useState } from 'react';
 
-const useScrollDirection = (cb) => {
+const useScrollEvent = ({ scrollUpCb, scrollDownCb }) => {
   const [y, setY] = useState(0);
 
   const handleNavigation = useCallback(e => {
     const window = e.currentTarget;
-    cb(y < window.scrollY);
+    if(y < window.scrollY) {
+      scrollDownCb();
+    } else {
+      scrollUpCb();
+    }
     setY(window.scrollY);
   }, [y]);
 
@@ -21,4 +25,4 @@ const useScrollDirection = (cb) => {
   return;
 };
 
-export default useScrollDirection;
+export default useScrollEvent;

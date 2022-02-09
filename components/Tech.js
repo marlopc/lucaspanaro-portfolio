@@ -9,4 +9,4 @@ const Tech = ({ tech }) => {
   );
 };
 
-export default Tech
+export default Tech;

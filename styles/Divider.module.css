@@ -25,3 +25,11 @@
   height: 1px;
   background: var(--main-color);
 }
+
+.jsxComponent::before {
+  content: '<';
+}
+
+.jsxComponent::after {
+  content: '/>';
+}

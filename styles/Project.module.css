@@ -9,13 +9,15 @@
 }
 
 .name {
-  margin: 0;
-  display: flex;
   width: 290px;
+  display: flex;
+  align-items: baseline;
+  column-gap: 5px;
 }
 
-.name span {
-  margin: 5px 0;
+.name,
+.name::before {
+  margin: 8px 0;
   padding: 0;
   font-size: 15px;
   font-family: var(--sans-font);
@@ -23,8 +25,8 @@
   height: 24px;
 }
 
-.container:hover .name span {
-  color: var(--main-color);
+.name::before {
+  content: '| ';
 }
 
 .overflow {
@@ -38,16 +40,18 @@
   height: 219.7px;
   filter: grayscale(1);
   transition: all 200ms;
-  z-index: 999;
-  box-shadow: 0px 1px 5px #3e494bb2;
+  z-index: 1;
+  box-shadow: 0px 1px 5px var(--shadow-color);
 }
 
-.container:hover {
+.container:hover,
+.container:focus-within {
   position: relative;
   transform: translate(-5px, -5px);
 }
 
-.container:hover .image {
+.container:hover .image,
+.container:focus-within .image {
   filter: grayscale(0);
   transform: scale(1.2);
   transition: transform 200ms;
@@ -69,7 +73,7 @@
 .links {
   position: absolute;
   top: 0;
-  z-index: 9999;
+  z-index: 2;
   background: #00000098;
   width: 290px;
   height: 220px;
@@ -104,12 +108,14 @@
   color: var(--main-color);
 }
 
-.container:hover .stackContainer {
+.container:hover .stackContainer,
+.container:focus-within .stackContainer {
   top: 5px;
   opacity: 1;
 }
 
-.container:hover .links {
+.container:hover .links,
+.container:focus-within .links {
   opacity: 1;
 }
 

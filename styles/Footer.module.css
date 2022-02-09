@@ -53,12 +53,13 @@
   font-weight: bold;
 }
 
-.footer_socials a:hover :first-child {
+.footer_socials a:hover :first-child,
+.footer_socials a:focus :first-child {
   opacity: 1;
   transform: translateY(0);
 }
 
-.footer_socials span {
+.footer_socials > * {
   margin-left: 20px;
   font-size: 35px;
   color: var(--main-color);

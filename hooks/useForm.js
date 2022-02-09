@@ -65,6 +65,6 @@ const useForm = () => {
     validateField,
     validateForm
   };
-}
+};
 
-export default useForm
+export default useForm;

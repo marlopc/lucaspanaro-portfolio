@@ -1,6 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import styles from '../styles/Stack.module.css';
+import useLocale from '../hooks/useLocale';
 import useObserver from '../hooks/useObserver';
+import useStackTabs from '../hooks/useStackTabs';
 import CSSIcon from './Stack/svg/CSSIcon';
 import ExpressIcon from './Stack/svg/ExpressIcon';
 import HTMLIcon from './Stack/svg/HTMLIcon';
@@ -12,46 +14,82 @@ import PostgresIcon from './Stack/svg/PostgresIcon';
 import ReactIcon from './Stack/svg/ReactIcon';
 import SequelizeIcon from './Stack/svg/SequelizeIcon';
 import TechIcon from './Stack/TechIcon';
+import { sectionNames } from '../lib/translations';
+
+const TabButton = React.forwardRef(({ tabId, label, currentTab, ...rest }, ref) => {
+
+  return (
+    <button
+      id={tabId}
+      aria-selected={currentTab === tabId}
+      tabIndex={currentTab === tabId ? '0' : '-1'}
+      aria-controls={`${tabId}-tab`}
+      role='tab'
+      className={`${styles.ns} ${currentTab === tabId && styles.s}`}
+      ref={ref}
+      {...rest}
+    >
+      {label}
+    </button>
+  )
+});
+
+const TabPanel = ({ tabId, currentTab, children }) => {
+
+  return (
+    <div
+      className={`${styles.stack_data} ${currentTab === tabId ? styles.stack_data_s : ''}`}
+      role='tabpanel'
+      tabIndex={currentTab === tabId ? '0' : '-1'}
+      aria-labelledby={tabId}
+      aria-hidden={currentTab !== tabId}
+      id={`${tabId}-tab`}
+    >
+      {children}
+    </div>
+  )
+};
 
 const Stack = () => {
-  const [selected, setSelected] = useState('frontend');
+  const { locale } = useLocale();
+  const { stack } = sectionNames[locale];
+  const { selected, ref, handleKeyDown, handleClick } = useStackTabs();
+
   const containerRef = useRef();
   const [animation] = useObserver(containerRef, '-150px');
 
-  const handleSwitch = (value) => {
-    setSelected(value);
-  };
-
   return (
-    <div className='sectionContainer'>
+    <section className='sectionContainer'>
       <div className={styles.container}>
         <div className={`${styles.stack_background} ${animation ? 'fade_in_up' : ""}`} ref={containerRef}>
-          <nav className={styles.switch}>
-            <ul>
-              <li 
-                className={`${styles.ns} ${selected === 'frontend' && styles.s}`}
-                onClick={() => handleSwitch('frontend')}
-              >
-                <span>Frontend</span>
-              </li>
-              <li 
-                name='backend' 
-                className={`${styles.ns} ${selected === 'backend' && styles.s}`}
-                onClick={() => handleSwitch('backend')}
-              >
-                <span>Backend</span>
-              </li>
-              <li 
-                name='db' 
-                className={`${styles.ns} ${selected === 'db' && styles.s}`}
-                onClick={() => handleSwitch('db')}
-              >
-                <span>Database</span>
-              </li>
-            </ul>
-          </nav>
+          <div className={styles.switch} role='tablist' aria-label={stack}>
+            <TabButton
+              tabId='frontend'
+              currentTab={selected}
+              label='Frontend'
+              onClick={handleClick}
+              ref={ref}
+              onKeyDown={handleKeyDown}
+            />
+            <TabButton
+              tabId='backend'
+              currentTab={selected}
+              label='Backend'
+              onClick={handleClick}
+              ref={ref}
+              onKeyDown={handleKeyDown}
+            />
+            <TabButton
+              tabId='db'
+              currentTab={selected}
+              label='Database'
+              onClick={handleClick}
+              ref={ref}
+              onKeyDown={handleKeyDown}
+            />
+          </div>
           <div className={styles.stack_outer}>
-            <div className={`${styles.stack_data} ${selected === 'frontend' && styles.stack_data_s}`}>
+            <TabPanel tabId='frontend' currentTab={selected}>
               <TechIcon
                 label='HTML'
                 icon={<HTMLIcon />}
@@ -69,8 +107,8 @@ const Stack = () => {
                 href='https://reactjs.org'
                 icon={<ReactIcon />}
               />
-            </div>
-            <div className={`${styles.stack_data} ${selected === 'backend' && styles.stack_data_s}`}>
+            </TabPanel>
+            <TabPanel tabId='backend' currentTab={selected}>
               <TechIcon
                 label='Node'
                 href='https://nodejs.org/'
@@ -91,8 +129,8 @@ const Stack = () => {
                 href='https://sequelize.org/'
                 icon={<SequelizeIcon />}
               />
-            </div>
-            <div className={`${styles.stack_data} ${selected === 'db' && styles.stack_data_s}`}>
+            </TabPanel>
+            <TabPanel tabId='db' currentTab={selected}>
               <TechIcon
                 label='MongoDB'
                 href='https://www.mongodb.com/'
@@ -103,12 +141,12 @@ const Stack = () => {
                 href='https://www.postgresql.org/'
                 icon={<PostgresIcon />}
               />
-            </div>
+            </TabPanel>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
-}
+};
 
-export default Stack
+export default Stack;

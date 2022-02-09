@@ -5,12 +5,12 @@ import Project from './Project';
 const Projects = ({ projects }) => {
 
   return (
-    <div className='sectionContainer'>
+    <section>
       <div className={style.projects_wrapper}>
         {projects.map((project) => <Project project={project} key={project.id}/>)}
       </div>
-    </div>
+    </section>
   )
 };
 
-export default Projects
+export default Projects;

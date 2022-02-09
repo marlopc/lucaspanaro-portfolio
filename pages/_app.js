@@ -12,6 +12,6 @@ function MyApp({ Component, pageProps }) {
       </Layout>
     </LocaleProvider>
   )
-}
+};
 
-export default MyApp
+export default MyApp;

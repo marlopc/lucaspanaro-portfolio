@@ -16,9 +16,12 @@ const Project = ({ project }) => {
 
   return (
     <div className={`${styles.container} ${animation ? 'fade_in_up' : ""}`} ref={containerRef}>
-      <div className={styles.name}>
-        <span>| {project.name}</span>
-      </div>
+      <span
+        id={`${project.name}_label`}
+        className={styles.name}
+      >
+        {project.name}
+      </span>
       <div className={styles.overflow}>
         <div className={styles.image}>
           <Image
@@ -29,13 +32,23 @@ const Project = ({ project }) => {
         </div>
         <div className={styles.links}>
           {project.link && (
-            <a href={project.link} target='_blank' rel='noopener noreferrer'>
+            <a
+              href={project.link}
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label={`${visit} ${project.name}`}
+            >
               <ExternalLink size={34}/>
               <span>{visit}</span>
             </a>
           )}
           {project.repo && (
-            <a href={project.repo} target='_blank' rel='noopener noreferrer'>
+            <a
+              href={project.repo}
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label={`${project.name} repo`}
+            >
               <GitHub size={34}/>
               <span>Repo</span>
             </a>
@@ -49,4 +62,4 @@ const Project = ({ project }) => {
   )
 };
 
-export default Project
+export default Project;

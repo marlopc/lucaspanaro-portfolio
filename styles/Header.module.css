@@ -72,6 +72,9 @@
   height: 20vh;
   animation: fade-in-up 2.2s;
   align-self: center;
+  color: var(--main-color);
+  font-family: var(--sans-font);
+  cursor: pointer;
 }
 
 @keyframes fade-in-right {
@@ -94,12 +97,6 @@
     opacity: 1;
     transform: translateY(0);
   };
-}
-
-.scrollDown span {
-  color: var(--main-color);
-  font-family: var(--sans-font);
-  cursor: pointer;
 }
 
 @media (max-width: 360px) {
