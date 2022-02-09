@@ -1,7 +1,11 @@
 import React from 'react';
 import styles from '../styles/Burger.module.css';
+import useLocale from '../hooks/useLocale';
+import { navContent } from '../lib/translations';
 
 const Burger = React.forwardRef(({  closeMenu, openMenu, menuIsOpen, handleKeyDown }, ref) => {
+  const { locale } = useLocale();
+  const { open, close } = navContent[locale];
 
   return (
     <button
@@ -9,7 +13,7 @@ const Burger = React.forwardRef(({  closeMenu, openMenu, menuIsOpen, handleKeyDo
       className={styles.container}
       onClick={menuIsOpen ? closeMenu : openMenu}
       ref={ref}
-      aria-label={menuIsOpen ? 'Close menu' : 'Open menu'}
+      aria-label={menuIsOpen ? close : open}
       aria-expanded={menuIsOpen}
     >
       <div className={menuIsOpen ? styles.burger_icon_close : styles.burger_icon}>
