@@ -4,6 +4,7 @@
   padding: 10vh 15vw;
   height: 95vh;
   overflow-x: hidden;
+  min-height: 510px;
   align-items: flex-start;
 }
 
