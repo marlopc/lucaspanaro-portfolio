@@ -12,11 +12,10 @@ const Header = () => {
     <div className={styles.headerContainer}>
       <span className={styles.greeting}>{greeting}</span>
       <h1 className={styles.name}>Lucas Panaro</h1>
-      <h2 className={styles.dev}>
+      <p className={styles.dev}>
         Web developer
         <span className={styles.devDot}>.</span>
-      </h2>
-
+      </p>
       <p className={styles.paragraph}>
         {paragraph_1}<br/><br/>
         {paragraph_2}
