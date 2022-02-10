@@ -33,6 +33,10 @@
   margin: 5px 0;
 }
 
+.field_container > :last-child {
+  height: 15px;
+}
+
 .field_container small {
   display: block;
   height: 15px;

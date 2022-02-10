@@ -1,119 +1,67 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { useRouter } from 'next/router';
 import styles from '../styles/Contact.module.css';
-import useForm from '../hooks/useForm';
 import useObserver from '../hooks/useObserver';
 import { contactContent } from '../lib/translations';
+import useContactAnimation from '../hooks/useContactAnimation';
+import useContactForm from '../hooks/useContactForm';
 
-const initialForm = {
-  name: "",
-  email: "",
-  message: "",
-};
-
-const initialFocused = {
-  name: false,
-  email: false,
-  message: false,
+const ErrorAlert = ({ error, message }) => {
+  return (
+    <div>
+      {error && <small role='alert'>{message}</small>}
+    </div>
+  )
 };
 
 const Contact = ({ emailAddress }) => {
   const { locale } = useRouter();
-  const { 
-    title, 
-    name, 
-    email, 
-    message, 
-    send, 
-    send_load, 
+  
+  const {
+    title,
+    name,
+    email,
+    message,
+    send,
+    send_load,
     send_finish,
-    final_message, 
-    ...error_messages 
+    final_message,
+    ...error_messages
   } = contactContent[locale];
 
   const containerRef = useRef();
-  const [animation] = useObserver(containerRef, '-150px', { disableIf: '(max-height: 300px)' });
 
-  const [isFocused, setIsFocused] = useState(initialFocused);
-  
-  const { validateForm, validateField } = useForm();
-  const [form, setForm] = useState(initialForm);
-  const [errors, setErrors] = useState({});
-  const [loaderSend, setLoaderSend] = useState(false);
-  const [loaderText, setLoaderText] = useState(send);
-  const [showFinalMessage, setShowFinalMessage] = useState(false);
+  const [animation] = useObserver(
+    containerRef,
+    '-150px',
+    { disableIf: '(max-height: 300px)' },
+  );
 
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value
-    })
-  };
+  const {
+    handleBlur,
+    handleChange,
+    handleFocus,
+    handleSend,
+    isSending,
+    isFocused,
+    resetAll,
+    form,
+    errors,
+  } = useContactForm(emailAddress);
 
-  const handleSend = async () => {
-    const sendFormErrors = validateForm(form);
-
-    if(Object.keys(sendFormErrors).length > 0) {
-      setErrors(sendFormErrors);
-      return;
-    }
-
-    setLoaderSend(true);
-    setLoaderText(send_load);
-    setTimeout(() => {
-      setLoaderText(send_finish);
-    }, 1500);
-    setTimeout(() => {
-      setShowFinalMessage(true);
-    }, 2500);
-    setTimeout(() => {
-      setErrors({});
-      setForm(initialForm);
-      setIsFocused(initialFocused);
-      setLoaderText(send);
-      setLoaderSend(false);
-      setShowFinalMessage(false);
-    }, 8000);
-
-    await fetch(`https://formsubmit.co/${emailAddress}`, {
-      method: "POST",
-      body: JSON.stringify(form),
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-    });
-  };
-
-  const handleFocus = (e) => {
-    delete errors[e.target.name];
-    setErrors(errors);
-
-    setIsFocused({
-      ...isFocused,
-      [e.target.name]: true
-    });
-  };
-
-  const handleBlur = (e) => {
-    setErrors(validateField(e.target, errors));
-
-    setIsFocused({
-      ...isFocused,
-      [e.target.name]: false
-    });
-  };
+  const animations = useContactAnimation(isSending, resetAll);
 
   return (
     <section>
       <div className={styles.container}>
         <div
-          className={`${styles.contact_background} ${animation ? "fade_in_up" : ""} ${loaderSend ? styles.rounded : ""}`}
+          className={`${styles.contact_background} ${animation ? "fade_in_up" : ""} ${animations.loaderSend ? styles.rounded : ""}`}
           ref={containerRef}
         >
           <form
-            className={`${styles.contact_form} ${showFinalMessage ? styles.move_up : ""}`}
+            className={`${styles.contact_form} ${animations.showFinalMessage ? styles.move_up : ""}`}
             onSubmit={(e) => e.preventDefault()}
+            noValidate
           >
             <h2>{title}</h2>
             <div className={styles.field_container}>
@@ -131,9 +79,11 @@ const Contact = ({ emailAddress }) => {
                 onChange={handleChange}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
-                className={errors["name"] ? styles.error : ""}
+                className={errors.name ? styles.error : ""}
+                aria-invalid={!!errors.email}
+                required
               />
-              <small>{errors["name"] ? error_messages[errors["name"]] : ""}</small>
+              <ErrorAlert error={errors.name} message={error_messages[errors.name]} />
             </div>
             <div className={styles.field_container}>
               <label 
@@ -150,9 +100,11 @@ const Contact = ({ emailAddress }) => {
                 onChange={handleChange}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
-                className={errors["email"] ? styles.error : ""}
+                className={errors.email ? styles.error : ""}
+                aria-invalid={!!errors.email}
+                required
               />
-              <small>{errors["email"] ? error_messages[errors["email"]] : ""}</small>
+              <ErrorAlert error={errors.email} message={error_messages[errors.email]} />
             </div>
             <div className={styles.field_container}>
               <label 
@@ -168,18 +120,20 @@ const Contact = ({ emailAddress }) => {
                 onChange={handleChange}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
-                className={errors["message"] ? styles.error : ""}
+                className={errors.message ? styles.error : ""}
+                aria-invalid={!!errors.message}
+                required
               />
-              <small>{errors["message"] ? error_messages[errors["message"]] : ""}</small>
+              <ErrorAlert error={errors.message} message={error_messages[errors.message]} />
             </div>
             <div>
-              <button onClick={handleSend} disabled={loaderSend} className={loaderSend ? styles.rounded : ""}>
-                <div className={loaderSend ? styles.send_load : ""}></div>
-                <span>{loaderText}</span>
+              <button onClick={handleSend} disabled={animations.loaderSend} className={animations.loaderSend ? styles.rounded : ""}>
+                <div className={animations.loaderSend ? styles.send_load : ""}></div>
+                <span>{animations.loaderText}</span>
               </button>
             </div>
           </form>
-          {showFinalMessage && <h2>{final_message}</h2>}
+          {animations.showFinalMessage && <h2>{final_message}</h2>}
         </div>
       </div>
     </section>
