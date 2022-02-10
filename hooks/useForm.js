@@ -1,69 +1,51 @@
-const useForm = () => {
-  const validateField = (field, errors) => {
-    const newErrors = {...errors};
+const validate = (errors, fieldOrForm, { fullValidation = false } = {}) => {
+  const newErrors = {...errors};
 
-    if(field.name === 'name') {
-      if(field.value === '') {
-        newErrors.name = 'name_empty_error';
-      } else if(field.value.length <= 2) {
-        newErrors.name = 'name_tooshort_error';
-      } else {
-        delete newErrors.name;
-      }
-    } else if(field.name === 'email') {
-      if(field.value === '') {
-        newErrors.email = 'email_empty_error';
-      } else if(!field.value.includes('@') || !field.value.includes('.')) {
-        newErrors.email = 'email_invalid_error';
-      } else {
-        delete newErrors.email;
-      }
-    } else if(field.name === 'message') {
-      if(field.value === '') {
-        newErrors.message = 'message_empty_error';
-      } else if(field.value.length < 5) {
-        newErrors.message = 'message_tooshort_error';
-      } else {
-        delete newErrors.message;
-      }
+  if(fullValidation || fieldOrForm.name === 'name') {
+    const value = fullValidation ? fieldOrForm.name : fieldOrForm.value;
+    if (value === '') {
+      newErrors.name = 'name_empty_error';
+    } else if (value.length <= 2) {
+      newErrors.name = 'name_tooshort_error';
+    } else {
+      delete newErrors.name;
     }
+  }
 
-    return newErrors;
-  };
+  if (fullValidation || fieldOrForm.name === 'email') {
+    const value = fullValidation ? fieldOrForm.email : fieldOrForm.value;
+    if (value === '') {
+      newErrors.email = 'email_empty_error';
+    } else if (!value.includes('@') || !value.includes('.')) {
+      newErrors.email = 'email_invalid_error';
+    } else {
+      delete newErrors.email;
+    }
+  }
+  
+  if (fullValidation || fieldOrForm.name === 'message') {
+    const value = fullValidation ? fieldOrForm.message : fieldOrForm.value;
+    if (value === '') {
+      newErrors.message = 'message_empty_error';
+    } else if (value.length < 5) {
+      newErrors.message = 'message_tooshort_error';
+    } else {
+      delete newErrors.message;
+    }
+  }
 
-  const validateForm = (form, errors) => {
-    const newErrors = {...errors};
+  return newErrors;
+};
 
-      if(form.name === '') {
-        newErrors.name = 'name_empty_error';
-      } else if(form.name.length <= 2) {
-        newErrors.name = 'name_tooshort_error';
-      } else {
-        delete newErrors.name;
-      }
+const useForm = () => {
 
-      if(form.email === '') {
-        newErrors.email = 'email_empty_error';
-      } else if(!form.email.includes('@') || !form.email.includes('.')) {
-        newErrors.email = 'email_invalid_error';
-      } else {
-        delete newErrors.email;
-      }
+  const validateField = (field, errors) => validate(errors, field);
 
-      if(form.message === '') {
-        newErrors.message = 'message_empty_error';
-      } else if(form.message.length < 5) {
-        newErrors.message = 'message_tooshort_error';
-      } else {
-        delete newErrors.message;
-      }
-
-    return newErrors;
-  };
+  const validateForm = (form, errors) => validate(errors, form, { fullValidation: true });
 
   return {
     validateField,
-    validateForm
+    validateForm,
   };
 };
 

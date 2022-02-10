@@ -16,7 +16,9 @@ const useObserver = (ref, margin = '0px') => {
 
     observer.observe(ref.current);
 
-    return () => observer && observer.disconnect();
+    return () => {
+      if(observer) observer.disconnect();
+    }
   });
 
   return [animation, ref];

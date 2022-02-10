@@ -3,14 +3,16 @@ import Link from 'next/link';
 import styles from '../styles/Menu.module.css';
 import useLocale from '../hooks/useLocale';
 import PortfolioLogo from './icons/PortfolioLogo';
-import { navContent } from '../lib/translations';
+import { navContent, sectionNames } from '../lib/translations';
+import { encodeLower } from '../lib/encode';
 
 const ResponsiveMenu = ({ menuIsOpen, closeMenu, addItemToRefs, handleKeyDown }) => {
   const { locale } = useLocale();
 
   const navNames = navContent[locale];
+  const sections = sectionNames[locale];
 
-  const handleClick = () => { closeMenu({ focusBurger: false }) }
+  const handleClick = () => { closeMenu({ focusBurger: false }) };
 
   return (
     <>
@@ -20,7 +22,7 @@ const ResponsiveMenu = ({ menuIsOpen, closeMenu, addItemToRefs, handleKeyDown })
         </header>
         <ul className={styles.menuLinksUl} onKeyDown={handleKeyDown}>
           <li>
-            <Link href={`/#${navNames.home.toLowerCase()}`}>
+            <Link href={`/#${encodeLower(sections.home)}`}>
               <a
                 onClick={handleClick}
                 tabIndex={menuIsOpen ? '0' : '-1'}
@@ -33,7 +35,33 @@ const ResponsiveMenu = ({ menuIsOpen, closeMenu, addItemToRefs, handleKeyDown })
             </Link>
           </li>
           <li>
-            <Link href={`/#${navNames.projects.toLowerCase()}`}>
+            <Link href={`/#${encodeLower(sections.bio)}`}>
+              <a
+                onClick={handleClick}
+                tabIndex={menuIsOpen ? '0' : '-1'}
+                ref={addItemToRefs}
+              >
+                <div>
+                  {navNames.bio}
+                </div>
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href={`/#${encodeLower(sections.stack)}`}>
+              <a
+                onClick={handleClick}
+                tabIndex={menuIsOpen ? '0' : '-1'}
+                ref={addItemToRefs}
+              >
+                <div>
+                  {navNames.stack}
+                </div>
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href={`/#${encodeLower(sections.projects)}`}>
               <a
                 onClick={handleClick}
                 tabIndex={menuIsOpen ? '0' : '-1'}
@@ -46,7 +74,7 @@ const ResponsiveMenu = ({ menuIsOpen, closeMenu, addItemToRefs, handleKeyDown })
             </Link>
           </li>
           <li>
-            <Link href={`/#${navNames.contact.toLowerCase()}`}>
+            <Link href={`/#${encodeLower(sections.contact)}`}>
               <a
                 onClick={handleClick}
                 tabIndex={menuIsOpen ? '0' : '-1'}

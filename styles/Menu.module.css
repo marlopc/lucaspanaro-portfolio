@@ -38,6 +38,7 @@
   background-size: 200%;
   transition: .5s ease-out;
   font-size: 35px;
+  text-transform: uppercase;
 }
 
 .menuLinksUl li div:hover,

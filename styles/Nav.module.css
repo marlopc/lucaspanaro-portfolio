@@ -50,6 +50,10 @@
   transition: transform 200ms ease, background 300ms ease, color 300ms ease;
 }
 
+.nav ul li a {
+  text-transform: uppercase;
+}
+
 .nav ul li:hover,
 .nav ul li:focus-within {
   transform: scale(1.1);
