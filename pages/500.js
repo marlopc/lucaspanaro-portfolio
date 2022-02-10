@@ -1,13 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styles from '../styles/ErrorPage.module.css';
-import useLocale from '../hooks/useLocale';
 import ArrowRight from '../components/icons/ArrowRight';
 import { custom500Content } from '../lib/translations';
 
 const Custom500 = () => {
-  const { locale } = useLocale();
+  const { locale } = useRouter();
   const { heading, subheading, link } = custom500Content[locale];
 
   return (
@@ -28,14 +28,6 @@ const Custom500 = () => {
       </div>
     </>
   );
-};
-
-export const getStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      locale: locale,
-    }
-  };
 };
 
 export default Custom500;

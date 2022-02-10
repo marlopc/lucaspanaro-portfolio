@@ -1,13 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styles from '../styles/Menu.module.css';
-import useLocale from '../hooks/useLocale';
 import PortfolioLogo from './icons/PortfolioLogo';
-import { navContent, sectionNames } from '../lib/translations';
 import { encodeLower } from '../lib/encode';
+import { navContent, sectionNames } from '../lib/translations';
 
 const ResponsiveMenu = ({ menuIsOpen, closeMenu, addItemToRefs, handleKeyDown }) => {
-  const { locale } = useLocale();
+  const { locale } = useRouter();
 
   const navNames = navContent[locale];
   const sections = sectionNames[locale];

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
+import { useRouter } from 'next/router';
 import styles from '../styles/Contact.module.css';
 import useForm from '../hooks/useForm';
-import useLocale from '../hooks/useLocale';
 import useObserver from '../hooks/useObserver';
 import { contactContent } from '../lib/translations';
 
@@ -18,7 +18,7 @@ const initialFocused = {
 };
 
 const Contact = ({ emailAddress }) => {
-  const { locale } = useLocale();
+  const { locale } = useRouter();
   const { 
     title, 
     name, 
@@ -32,7 +32,7 @@ const Contact = ({ emailAddress }) => {
   } = contactContent[locale];
 
   const containerRef = useRef();
-  const [animation] = useObserver(containerRef, "-150px");
+  const [animation] = useObserver(containerRef, '-150px', { disableIf: '(max-height: 300px)' });
 
   const [isFocused, setIsFocused] = useState(initialFocused);
   

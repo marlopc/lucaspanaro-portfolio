@@ -10,7 +10,7 @@
   justify-content: space-between;
   max-height: 67px;
   transition: top 500ms;
-  z-index: 99999999;
+  z-index: 4;
   background-color: var(--background-color);
 }
 
@@ -22,7 +22,7 @@
   justify-content: space-between;
   max-height: 67px;
   transition: top 500ms;
-  z-index: 99999999;
+  z-index: 4;
   background-color: var(--background-color);
 }
 

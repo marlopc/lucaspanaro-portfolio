@@ -1,10 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
-import useLocale from '../hooks/useLocale';
+import { useRouter } from 'next/router';
 import { seoContent } from '../lib/translations';
 
 const SEO = () => {
-  const { locale } = useLocale();
+  const { locale } = useRouter();
   const { title, description, keywords } = seoContent[locale];
   const openGraphLocale = locale.replace('-', '_').toLowerCase();
 

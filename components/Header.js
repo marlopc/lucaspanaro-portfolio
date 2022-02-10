@@ -1,11 +1,11 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import styles from '../styles/Header.module.css';
-import useLocale from '../hooks/useLocale';
 import { headerContent } from '../lib/translations';
 
 const Header = () => {
-  const { locale } = useLocale();
+  const { locale } = useRouter();
   const { greeting, scroll_text, paragraph_1, paragraph_2 } = headerContent[locale];
 
   return (

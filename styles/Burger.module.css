@@ -52,5 +52,5 @@
 }
 
 .container:focus-within > .burger_icon_close {
-  transform: scale(1.2);
+  outline: auto;
 }

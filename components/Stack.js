@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
+import { useRouter } from 'next/router';
 import styles from '../styles/Stack.module.css';
-import useLocale from '../hooks/useLocale';
 import useObserver from '../hooks/useObserver';
 import useStackTabs from '../hooks/useStackTabs';
 import CSSIcon from './Stack/svg/CSSIcon';
@@ -51,12 +51,12 @@ const TabPanel = ({ tabId, currentTab, children }) => {
 };
 
 const Stack = () => {
-  const { locale } = useLocale();
+  const { locale } = useRouter();
   const { stack } = sectionNames[locale];
   const { selected, ref, handleKeyDown, handleClick } = useStackTabs();
 
   const containerRef = useRef();
-  const [animation] = useObserver(containerRef, '-150px');
+  const [animation] = useObserver(containerRef, '-150px', { disableIf: '(max-height: 300px)' });
 
   return (
     <section className='sectionContainer'>

@@ -1,13 +1,13 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../styles/ErrorPage.module.css';
-import useLocale from '../hooks/useLocale';
 import ArrowRight from '../components/icons/ArrowRight';
 import { custom404Content } from '../lib/translations';
 
 const Custom404 = () => {
-  const { locale } = useLocale();
+  const { locale } = useRouter();
   const { heading, subheading, link } = custom404Content[locale];
 
   return (
@@ -28,14 +28,6 @@ const Custom404 = () => {
       </div>
     </>
   );
-};
-
-export const getStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      locale: locale,
-    }
-  };
 };
 
 export default Custom404;

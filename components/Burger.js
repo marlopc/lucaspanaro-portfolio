@@ -1,10 +1,10 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import styles from '../styles/Burger.module.css';
-import useLocale from '../hooks/useLocale';
 import { navContent } from '../lib/translations';
 
 const Burger = React.forwardRef(({  closeMenu, openMenu, menuIsOpen, handleKeyDown }, ref) => {
-  const { locale } = useLocale();
+  const { locale } = useRouter();
   const { open, close } = navContent[locale];
 
   return (

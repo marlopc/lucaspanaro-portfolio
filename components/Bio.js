@@ -1,13 +1,13 @@
 import React, { useRef } from 'react';
+import { useRouter } from 'next/router';
 import styles from '../styles/Bio.module.css';
-import useLocale from '../hooks/useLocale';
 import useObserver from '../hooks/useObserver';
 import { bioContent } from '../lib/translations';
 
 const Bio = () => {
   const containerRef = useRef();
-  const { locale } = useLocale();
-  const [animation] = useObserver(containerRef, '-150px');
+  const { locale } = useRouter();
+  const [animation] = useObserver(containerRef, '-150px', { disableIf: '(max-height: 300px)' });
 
   const { title, about_1, about_2, about_3, about_4 } = bioContent[locale];
 

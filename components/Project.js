@@ -1,18 +1,18 @@
 import React, { useRef } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import styles from '../styles/Project.module.css';
 import useObserver from '../hooks/useObserver';
-import useLocale from '../hooks/useLocale';
 import Tech from './Tech';
 import ExternalLink from './icons/ExternalLink';
 import GitHub from './icons/GitHub';
 import { projectContent } from '../lib/translations';
 
 const Project = ({ project }) => {
-  const { locale } = useLocale();
+  const { locale } = useRouter();
   const { visit } = projectContent[locale];
   const containerRef = useRef();
-  const [animation] = useObserver(containerRef, '-150px');
+  const [animation] = useObserver(containerRef, '-150px', { disableIf: '(max-height: 300px)' });
 
   return (
     <div className={`${styles.container} ${animation ? 'fade_in_up' : ""}`} ref={containerRef}>

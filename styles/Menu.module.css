@@ -24,6 +24,8 @@
   list-style: none;
   padding: 0px 0px;
   font-family: var(--mono-font);
+  max-height: calc(100vh - 67px);
+  overflow: auto;
 }
 
 .menuLinksUl li div {

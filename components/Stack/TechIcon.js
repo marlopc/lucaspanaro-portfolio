@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/router';
 import styles from '../../styles/Stack.module.css';
-import useLocale from '../../hooks/useLocale';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import ExternalLink from '../icons/ExternalLink';
 import { techIconContent } from '../../lib/translations';
 
 const ResponsiveIcon = ({ label, href = false, icon }) => {
   const [isActive, setIsActive] = useState(false);
-  const { locale } = useLocale();
+  const { locale } = useRouter();
   const { goto } = techIconContent[locale];
   const linkRef = useRef(null);
 
@@ -56,7 +56,7 @@ const ResponsiveIcon = ({ label, href = false, icon }) => {
 };
 
 const NormalIcon = ({ label, href = false, icon }) => {
-  const { locale } = useLocale();
+  const { locale } = useRouter();
   const { goto } = techIconContent[locale];
 
   return (

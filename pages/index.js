@@ -1,7 +1,7 @@
 import React from 'react';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import useLocale from '../hooks/useLocale';
+import { useRouter } from 'next/router';
 import Bio from '../components/Bio';
 import Contact from '../components/Contact';
 import Divider from '../components/Divider';
@@ -12,7 +12,7 @@ import Stack from '../components/Stack';
 import { sectionNames } from '../lib/translations';
 
 const Home = ({ email, allProjects }) => {
-  const { locale } = useLocale();
+  const { locale } = useRouter();
 
   const { bio, stack, projects, contact } = sectionNames[locale];
 
@@ -32,7 +32,7 @@ const Home = ({ email, allProjects }) => {
   )
 };
 
-export const getStaticProps = async ({ locale }) => {
+export const getStaticProps = async () => {
   const email = process.env.EMAIL;
 
   const projectsFilePath = join(process.cwd(), 'projects.json');
@@ -41,7 +41,6 @@ export const getStaticProps = async ({ locale }) => {
 
   return {
     props: {
-      locale,
       email,
       allProjects: JSON.parse(projects),
     }

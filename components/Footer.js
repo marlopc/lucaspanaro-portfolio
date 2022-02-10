@@ -1,13 +1,13 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import styles from '../styles/Footer.module.css';
-import useLocale from '../hooks/useLocale';
 import GitHub from './icons/GitHub';
 import Instagram from './icons/Instagram';
 import LinkedIn from './icons/LinkedIn';
 import { footerContent } from '../lib/translations';
 
 const Footer = () => {
-  const { locale } = useLocale();
+  const { locale } = useRouter();
   const { message_1, message_2 } = footerContent[locale]; 
 
   return (
