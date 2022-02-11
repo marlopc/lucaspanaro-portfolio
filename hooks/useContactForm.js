@@ -14,7 +14,7 @@ const initialFocused = {
   message: false,
 };
 
-const useContactForm = (emailAddress) => {
+const useContactForm = () => {
   const [isSending, setIsSending] = useState(false);
   const [isFocused, setIsFocused] = useState(initialFocused);
   
@@ -47,7 +47,7 @@ const useContactForm = (emailAddress) => {
 
     setIsSending(true);
 
-    await sendMail(form, emailAddress);
+    await sendMail(form);
   };
 
   const handleFocus = (e) => {

@@ -14,7 +14,7 @@ const ErrorAlert = ({ error, message }) => {
   )
 };
 
-const Contact = ({ emailAddress }) => {
+const Contact = () => {
   const { locale } = useRouter();
   
   const {
@@ -47,7 +47,7 @@ const Contact = ({ emailAddress }) => {
     resetAll,
     form,
     errors,
-  } = useContactForm(emailAddress);
+  } = useContactForm();
 
   const animations = useContactAnimation(isSending, resetAll);
 

@@ -11,7 +11,7 @@ import SEO from '../components/SEO';
 import Stack from '../components/Stack';
 import { sectionNames } from '../lib/translations';
 
-const Home = ({ email, allProjects }) => {
+const Home = ({ allProjects }) => {
   const { locale } = useRouter();
 
   const { bio, stack, projects, contact } = sectionNames[locale];
@@ -27,21 +27,18 @@ const Home = ({ email, allProjects }) => {
       <Divider section={projects} />
       <Projects projects={allProjects} />
       <Divider section={contact} />
-      <Contact emailAddress={email} />
+      <Contact />
     </div>
   )
 };
 
 export const getStaticProps = async () => {
-  const email = process.env.EMAIL;
-
   const projectsFilePath = join(process.cwd(), 'projects.json');
 
   const projects = readFileSync(projectsFilePath, { encoding: 'utf-8' });
 
   return {
     props: {
-      email,
       allProjects: JSON.parse(projects),
     }
   };
