@@ -1,11 +1,11 @@
 import { useCallback, useState } from 'react';
 import useForm from './useForm';
-import sendMail from '../lib/sendMail';
+import sendMail from '../lib/mailer/sendMail';
 
 const initialForm = {
-  name: "",
-  email: "",
-  message: "",
+  name: '',
+  email: '',
+  message: '',
 };
 
 const initialFocused = {

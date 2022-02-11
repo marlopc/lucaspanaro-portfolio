@@ -1,31 +1,26 @@
 import transporter from "../../lib/config/nodeMailer";
+import generateHTML from '../../lib/mailer/generateHTML';
 
 const handler = async (req, res) => {
   if(req.method === 'POST') {
     const { name, email, message } = req.body;
-  
-    const mailData = {
-      from: `"Portfolio visitor" <${process.env.EMAILME_EMAIL}>`,
-      to: process.env.EMAIL,
-      subject: `Personal portofolio - new message from ${name}`,
-      text: `New message, email: ${email} - name: ${name} - message: ${message}`,
-      html: `
-        <h2>New message by ${name}</h2>
-        <p>Email: <address>${email}</address></p>
-        <p>Message:</p>
-        <p>${message}</p>
-      `,
-    };
 
     try {
-      await transporter.sendMail(mailData);
+      await transporter.sendMail({
+        from: `"Personal portfolio" <${process.env.EMAILME_EMAIL}>`,
+        to: process.env.EMAIL,
+        subject: `New message from ${name}`,
+        text: `New message, email: ${email} - name: ${name} - message: ${message}`,
+        html: generateHTML({ name, email, message }),
+      });
       
-      return res.status(200).send('SENT');
+      res.status(200).send('SENT');
     } catch (error) {
-      return res.status(500).json({ error });
+      res.status(500).send('ERROR');
     }
   } else {
-    res.status(405).setHeader('Allow', 'POST').end();
+    res.setHeader('Allow', ['POST']);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 };
 
