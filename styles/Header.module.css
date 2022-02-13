@@ -7,9 +7,8 @@
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 10vh 15vw;
-  height: 95vh;
+  min-height: calc(100vh - 65px);
   overflow-x: hidden;
-  min-height: 510px;
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
@@ -95,8 +94,8 @@
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
-  height: 20vh;
-  -webkit-animation: fade-in-up 2.2s;
+  /*height: 20vh;
+  */-webkit-animation: fade-in-up 2.2s;
   animation: fade-in-up 2.2s;
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
@@ -106,8 +105,15 @@
   cursor: pointer;
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
+  display: flex;
   flex-grow: 1;
-  padding-bottom: 15px;
+  justify-content: center;
+  align-items: flex-end;
+  -webkit-animation: fade-in-up 2.2s;
+}
+
+.scrollDown > a {
+  padding: 25px 0 50px;
 }
 
 @-webkit-keyframes fade-in-right {
@@ -162,7 +168,7 @@
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 360px), (max-height: 520px) {
   .headerContainer {
     padding: 4vh 10vw;
     width: 100%;
@@ -171,9 +177,5 @@
   .name {
     font-size: 50px;
     line-height: 50px;
-  }
-
-  .scrollDown {
-    height: 12vh;  
   }
 }
