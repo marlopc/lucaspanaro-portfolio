@@ -104,6 +104,10 @@
   color: var(--main-color);
   font-family: var(--sans-font);
   cursor: pointer;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding-bottom: 15px;
 }
 
 @-webkit-keyframes fade-in-right {
