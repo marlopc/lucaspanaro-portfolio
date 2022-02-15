@@ -1,8 +1,8 @@
 import React from 'react';
 
-const PortfolioLogo = () => {
+const PortfolioLogo = ({ className = '' }) => {
   return (
-    <div className='logo'>
+    <div className={`logo ${className}`}>
       <p>LP<span>.</span></p>
     </div>
   )

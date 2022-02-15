@@ -10,6 +10,7 @@ import Projects from '../components/Projects';
 import SEO from '../components/SEO';
 import Stack from '../components/Stack';
 import { sectionNames } from '../lib/translations';
+import { Loader } from '../components/Loader';
 
 const Home = ({ allProjects }) => {
   const { locale } = useRouter();
@@ -19,6 +20,7 @@ const Home = ({ allProjects }) => {
   return (
     <div>
       <SEO />
+      <Loader />
       <Header />
       <Divider section={bio} />
       <Bio />
