@@ -1,7 +1,6 @@
 import React from 'react';
-import { readFileSync } from 'fs';
-import { join } from 'path';
 import { useRouter } from 'next/router';
+import allProjects from '../projects.json';
 import Bio from '../components/Bio';
 import Contact from '../components/Contact';
 import Divider from '../components/Divider';
@@ -12,7 +11,7 @@ import Stack from '../components/Stack';
 import { sectionNames } from '../lib/translations';
 import { Loader } from '../components/Loader';
 
-const Home = ({ allProjects }) => {
+const Home = () => {
   const { locale } = useRouter();
 
   const { bio, stack, projects, contact } = sectionNames[locale];
@@ -32,18 +31,6 @@ const Home = ({ allProjects }) => {
       <Contact />
     </div>
   )
-};
-
-export const getStaticProps = async () => {
-  const projectsFilePath = join(process.cwd(), 'projects.json');
-
-  const projects = readFileSync(projectsFilePath, { encoding: 'utf-8' });
-
-  return {
-    props: {
-      allProjects: JSON.parse(projects),
-    }
-  };
 };
 
 export default Home;

@@ -15,7 +15,7 @@ const handler = async (req, res) => {
       });
       
       res.status(200).send('SENT');
-    } catch (error) {
+    } catch {
       res.status(500).send('ERROR');
     }
   } else {
