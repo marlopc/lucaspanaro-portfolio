@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 
-const useObserver = (ref, margin = '0px', { disableIf = null } = {}) => {
+const useObserver = (ref, margin = 0, { disableIf = null } = {}) => {
   const [animation, setAnimation] = useState(false);
+  const rootMargin = typeof margin === 'string'
+    ? margin
+    : `${margin}px`;
 
   useEffect(() => {
     if(disableIf && window.matchMedia(disableIf).matches) {
@@ -16,13 +19,13 @@ const useObserver = (ref, margin = '0px', { disableIf = null } = {}) => {
         observer.disconnect();
       }
     }, {
-      rootMargin: margin
+      rootMargin,
     });
 
     observer.observe(ref.current);
 
     return () => {
-      if(observer) observer.disconnect();
+      observer && observer.disconnect();
     }
   }, []);
 

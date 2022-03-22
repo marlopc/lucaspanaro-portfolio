@@ -33,7 +33,7 @@ const Contact = () => {
 
   const [animation] = useObserver(
     containerRef,
-    '-150px',
+    150,
     { disableIf: '(max-height: 300px)' },
   );
 

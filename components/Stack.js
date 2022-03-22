@@ -56,7 +56,11 @@ const Stack = () => {
   const { selected, ref, handleKeyDown, handleClick } = useStackTabs();
 
   const containerRef = useRef();
-  const [animation] = useObserver(containerRef, '-150px', { disableIf: '(max-height: 300px)' });
+  const [animation] = useObserver(
+    containerRef,
+    150,
+    { disableIf: '(max-height: 300px)' }
+  );
 
   return (
     <section className='sectionContainer'>

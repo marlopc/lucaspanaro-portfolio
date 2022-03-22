@@ -12,7 +12,11 @@ const Project = ({ project }) => {
   const { locale } = useRouter();
   const { visit } = projectContent[locale];
   const containerRef = useRef();
-  const [animation] = useObserver(containerRef, '-150px', { disableIf: '(max-height: 300px)' });
+  const [animation] = useObserver(
+    containerRef,
+    150,
+    { disableIf: '(max-height: 300px)' }
+  );
 
   return (
     <div className={`${styles.container} ${animation ? 'fade_in_up' : ""}`} ref={containerRef}>

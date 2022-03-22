@@ -7,7 +7,11 @@ import { bioContent } from '../lib/translations';
 const Bio = () => {
   const containerRef = useRef();
   const { locale } = useRouter();
-  const [animation] = useObserver(containerRef, '-150px', { disableIf: '(max-height: 300px)' });
+  const [animation] = useObserver(
+    containerRef,
+    150,
+    { disableIf: '(max-height: 300px)' }
+  );
 
   const { title, about_1, about_2, about_3, about_4 } = bioContent[locale];
 
