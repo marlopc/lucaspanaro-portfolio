@@ -6,7 +6,7 @@ import { headerContent } from '../lib/translations';
 
 const Header = () => {
   const { locale } = useRouter();
-  const { greeting, scroll_text, paragraph_1, paragraph_2 } = headerContent[locale];
+  const { greeting, scrollText, firstParagraph, secondParagraph } = headerContent[locale];
 
   return (
     <div className={styles.headerContainer}>
@@ -17,12 +17,12 @@ const Header = () => {
         <span className={styles.devDot}>.</span>
       </p>
       <p className={styles.paragraph}>
-        {paragraph_1}<br/><br/>
-        {paragraph_2}
+        {firstParagraph}<br/><br/>
+        {secondParagraph}
       </p>
       <div className={styles.scrollDown}>
-        <Link href="#bio">
-          <a>{scroll_text}</a>
+        <Link href='#bio'>
+          <a>{scrollText}</a>
         </Link>
       </div>
     </div>

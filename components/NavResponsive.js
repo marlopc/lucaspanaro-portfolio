@@ -6,7 +6,7 @@ import ResponsiveMenu from './ResponsiveMenu';
 
 const NavResponsive = () => {
   const isMobileLikeScreen = useMediaQuery('(max-width: 950px)');
-  
+
   const {
     ref: addItemToRefs,
     handleKeyDown,

@@ -16,23 +16,25 @@ import SequelizeIcon from './Stack/svg/SequelizeIcon';
 import TechIcon from './Stack/TechIcon';
 import { sectionNames } from '../lib/translations';
 
-const TabButton = React.forwardRef(({ tabId, label, currentTab, ...rest }, ref) => {
+const TabButton = React.forwardRef(
+  function TabButton ({ tabId, label, currentTab, ...rest }, ref) {
 
-  return (
-    <button
-      id={tabId}
-      aria-selected={currentTab === tabId}
-      tabIndex={currentTab === tabId ? '0' : '-1'}
-      aria-controls={`${tabId}-tab`}
-      role='tab'
-      className={`${styles.ns} ${currentTab === tabId && styles.s}`}
-      ref={ref}
-      {...rest}
-    >
-      {label}
-    </button>
-  )
-});
+    return (
+      <button
+        id={tabId}
+        aria-selected={currentTab === tabId}
+        tabIndex={currentTab === tabId ? '0' : '-1'}
+        aria-controls={`${tabId}-tab`}
+        role='tab'
+        className={`${styles.ns} ${currentTab === tabId && styles.s}`}
+        ref={ref}
+        {...rest}
+      >
+        {label}
+      </button>
+    )
+  }
+);
 
 const TabPanel = ({ tabId, currentTab, children }) => {
 
@@ -65,7 +67,7 @@ const Stack = () => {
   return (
     <section className='sectionContainer'>
       <div className={styles.container}>
-        <div className={`${styles.stack_background} ${animation ? 'fade_in_up' : ""}`} ref={containerRef}>
+        <div className={`${styles.stack_background} ${animation ? 'fade_in_up' : ''}`} ref={containerRef}>
           <div className={styles.switch} role='tablist' aria-label={stack}>
             <TabButton
               tabId='frontend'

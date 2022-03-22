@@ -19,7 +19,7 @@ const Project = ({ project }) => {
   );
 
   return (
-    <div className={`${styles.container} ${animation ? 'fade_in_up' : ""}`} ref={containerRef}>
+    <div className={`${styles.container} ${animation ? 'fade_in_up' : ''}`} ref={containerRef}>
       <span
         id={`${project.name}_label`}
         className={styles.name}
@@ -42,7 +42,7 @@ const Project = ({ project }) => {
               rel='noopener noreferrer'
               aria-label={`${visit} ${project.name}`}
             >
-              <ExternalLink size={34}/>
+              <ExternalLink size={34} />
               <span>{visit}</span>
             </a>
           )}
@@ -53,14 +53,14 @@ const Project = ({ project }) => {
               rel='noopener noreferrer'
               aria-label={`${project.name} repo`}
             >
-              <GitHub size={34}/>
+              <GitHub size={34} />
               <span>Repo</span>
             </a>
           )}
         </div>
       </div>
       <div className={styles.stackContainer}>
-        {project.tech.map(tech => <Tech tech={tech} key={tech}/>)}
+        {project.tech.map(tech => <Tech tech={tech} key={tech} />)}
       </div>
     </div>
   )

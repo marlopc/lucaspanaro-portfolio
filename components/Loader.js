@@ -14,7 +14,9 @@ export const Loader = () => {
       document.documentElement.style.overflow = 'auto';
     }, LOADER_SHOW_TIME);
 
-    return () => { clearTimeout(loaderTimeout); };
+    return () => {
+      clearTimeout(loaderTimeout);
+    };
   }, []);
 
   return (

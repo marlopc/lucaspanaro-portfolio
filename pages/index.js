@@ -5,6 +5,7 @@ import Bio from '../components/Bio';
 import Contact from '../components/Contact';
 import Divider from '../components/Divider';
 import Header from '../components/Header';
+import PageHead from '../components/PageHead';
 import Projects from '../components/Projects';
 import SEO from '../components/SEO';
 import Stack from '../components/Stack';
@@ -17,7 +18,8 @@ const Home = () => {
   const { bio, stack, projects, contact } = sectionNames[locale];
 
   return (
-    <div>
+    <>
+      <PageHead title='Lucas Panaro' />
       <SEO />
       <Loader />
       <Header />
@@ -29,7 +31,7 @@ const Home = () => {
       <Projects projects={allProjects} />
       <Divider section={contact} />
       <Contact />
-    </div>
+    </>
   )
 };
 

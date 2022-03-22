@@ -55,14 +55,14 @@ const NavDesktop = () => {
         </li>
         {pathname === '/' && mainPageNavigation}
         <li>
-          <a 
+          <a
             href={process.env.NEXT_PUBLIC_CV_DRIVE}
             target='_blank'
             rel='noopener noreferrer'
           >
             {navNames.resume}
           </a>
-        </li>     
+        </li>
       </ul>
     </nav>
   );

@@ -7,26 +7,29 @@ const useObserver = (ref, margin = 0, { disableIf = null } = {}) => {
     : `${margin}px`;
 
   useEffect(() => {
-    if(disableIf && window.matchMedia(disableIf).matches) {
+    let intersectionObserver;
+
+    if (disableIf && window.matchMedia(disableIf).matches) {
       setAnimation(true);
-      return;
+    } else {
+      intersectionObserver = new IntersectionObserver((entries, observer) => {
+        const el = entries[0];
+        if (el.isIntersecting && !animation) {
+          setAnimation(true);
+          observer.disconnect();
+        }
+      }, {
+        rootMargin,
+      });
+
+      intersectionObserver.observe(ref.current);
     }
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      const el = entries[0];
-      if(el.isIntersecting && !animation) {
-        setAnimation(true);
-        observer.disconnect();
-      }
-    }, {
-      rootMargin,
-    });
-
-    observer.observe(ref.current);
 
     return () => {
-      observer && observer.disconnect();
-    }
+      if (intersectionObserver) {
+        intersectionObserver.disconnect();
+      }
+    };
   }, []);
 
   return [animation, ref];

@@ -15,24 +15,24 @@ const useStackTabs = () => {
     const { id } = e.target.closest('button');
     const tabEventIndex = refs.current.findIndex((tabButton) => tabButton.id === id);
 
-    if(e.key === 'ArrowLeft') {
+    if (e.key === 'ArrowLeft') {
       const toIndex = ((tabEventIndex - 1) + refs.current.length) % refs.current.length;
       selectAndFocus(toIndex);
       e.preventDefault();
     }
 
-    if(e.key === 'ArrowRight') {
+    if (e.key === 'ArrowRight') {
       const toIndex = ((tabEventIndex + 1) + refs.current.length) % refs.current.length;
       selectAndFocus(toIndex);
       e.preventDefault();
     }
 
-    if(e.key === 'Home') {
+    if (e.key === 'Home') {
       selectAndFocus(0);
       e.preventDefault();
     }
 
-    if(e.key === 'End') {
+    if (e.key === 'End') {
       selectAndFocus(refs.current.length - 1);
       e.preventDefault();
     }

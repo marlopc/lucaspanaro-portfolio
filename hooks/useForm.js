@@ -1,12 +1,12 @@
 const validate = (errors, fieldOrForm, { fullValidation = false } = {}) => {
-  const newErrors = {...errors};
+  const newErrors = { ...errors };
 
-  if(fullValidation || fieldOrForm.name === 'name') {
+  if (fullValidation || fieldOrForm.name === 'name') {
     const value = fullValidation ? fieldOrForm.name : fieldOrForm.value;
     if (value === '') {
-      newErrors.name = 'name_empty_error';
+      newErrors.name = 'nameEmptyError';
     } else if (value.length <= 2) {
-      newErrors.name = 'name_tooshort_error';
+      newErrors.name = 'nameTooShortError';
     } else {
       delete newErrors.name;
     }
@@ -15,20 +15,20 @@ const validate = (errors, fieldOrForm, { fullValidation = false } = {}) => {
   if (fullValidation || fieldOrForm.name === 'email') {
     const value = fullValidation ? fieldOrForm.email : fieldOrForm.value;
     if (value === '') {
-      newErrors.email = 'email_empty_error';
+      newErrors.email = 'emailEmptyError';
     } else if (!value.includes('@') || !value.includes('.')) {
-      newErrors.email = 'email_invalid_error';
+      newErrors.email = 'emailInvalidError';
     } else {
       delete newErrors.email;
     }
   }
-  
+
   if (fullValidation || fieldOrForm.name === 'message') {
     const value = fullValidation ? fieldOrForm.message : fieldOrForm.value;
     if (value === '') {
-      newErrors.message = 'message_empty_error';
+      newErrors.message = 'messageEmptyError';
     } else if (value.length < 5) {
-      newErrors.message = 'message_tooshort_error';
+      newErrors.message = 'messageTooShortError';
     } else {
       delete newErrors.message;
     }

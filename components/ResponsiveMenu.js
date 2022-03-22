@@ -87,7 +87,7 @@ const ResponsiveMenu = ({ menuIsOpen, closeMenu, addItemToRefs, handleKeyDown })
             </Link>
           </li>
           <li>
-            <a 
+            <a
               href={process.env.NEXT_PUBLIC_CV_DRIVE}
               target='_blank'
               rel='noopener noreferrer'

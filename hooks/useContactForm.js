@@ -39,7 +39,7 @@ const useContactForm = () => {
   const handleSend = async () => {
     const sendFormErrors = validateForm(form);
 
-    if(Object.keys(sendFormErrors).length > 0) {
+    if (Object.keys(sendFormErrors).length > 0) {
       setErrors({});
       setErrors(sendFormErrors);
       return;

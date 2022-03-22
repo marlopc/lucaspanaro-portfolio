@@ -5,7 +5,7 @@ const useScrollEvent = ({ scrollUpCb, scrollDownCb }) => {
 
   const handleNavigation = useCallback(e => {
     const window = e.currentTarget;
-    if(y < window.scrollY) {
+    if (y < window.scrollY) {
       scrollDownCb();
     } else {
       scrollUpCb();

@@ -1,8 +1,8 @@
-import transporter from "../../lib/config/nodeMailer";
+import transporter from '../../lib/config/nodeMailer';
 import generateHTML from '../../lib/mailer/generateHTML';
 
 const handler = async (req, res) => {
-  if(req.method === 'POST') {
+  if (req.method === 'POST') {
     const { name, email, message } = req.body;
 
     try {
@@ -13,7 +13,7 @@ const handler = async (req, res) => {
         text: `New message, email: ${email} - name: ${name} - message: ${message}`,
         html: generateHTML({ name, email, message }),
       });
-      
+
       res.status(200).send('SENT');
     } catch {
       res.status(500).send('ERROR');

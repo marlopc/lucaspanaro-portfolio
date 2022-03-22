@@ -36,7 +36,7 @@ const Nav = () => {
             <PortfolioLogo />
           </a>
         </Link>
-        {isDesktopLikeScreen ? <NavDesktop /> :  <NavResponsive />}
+        {isDesktopLikeScreen ? <NavDesktop /> : <NavResponsive />}
       </header>
     </>
   )

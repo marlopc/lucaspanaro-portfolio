@@ -49,7 +49,7 @@ const useContactAnimation = (isSending, cb) => {
   }, []);
 
   useEffect(() => {
-    if(!isSending) return;
+    if (!isSending) return;
 
     const timeouts = animateSending();
 

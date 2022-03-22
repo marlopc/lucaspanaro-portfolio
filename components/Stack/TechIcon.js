@@ -12,7 +12,7 @@ const ResponsiveIcon = ({ label, href = false, icon }) => {
   const linkRef = useRef(null);
 
   useEffect(() => {
-    if(isActive) linkRef.current.focus();
+    if (isActive) linkRef.current.focus();
   }, [isActive])
 
   const handleSetActive = () => {
@@ -20,15 +20,15 @@ const ResponsiveIcon = ({ label, href = false, icon }) => {
   };
 
   const handleSetUnactive = (e) => {
-    if(e.relatedTarget === linkRef.current) return;
+    if (e.relatedTarget === linkRef.current) return;
     setIsActive(false);
   };
-  
+
   return (
     <div className={styles.icon_container} onBlur={handleSetUnactive}>
       {isActive && (
-        href ? (
-          <a
+        href
+          ? <a
             href={href}
             rel='noopener noreferrer'
             target='_blank'
@@ -41,9 +41,7 @@ const ResponsiveIcon = ({ label, href = false, icon }) => {
               <ExternalLink size={16} />
             </span>
           </a>
-        ) : (
-          <p ref={linkRef} tabIndex='0'>{label}</p>
-        )
+          : <p ref={linkRef} tabIndex='0'>{label}</p>
       )}
       <button
         onFocus={handleSetActive}
@@ -61,8 +59,8 @@ const NormalIcon = ({ label, href = false, icon }) => {
 
   return (
     <div className={styles.icon_container}>
-      {href ? (
-        <a
+      {href
+        ? <a
           href={href}
           rel='noopener noreferrer'
           target='_blank'
@@ -74,9 +72,8 @@ const NormalIcon = ({ label, href = false, icon }) => {
             <ExternalLink size={16} />
           </span>
         </a>
-      ) : (
-        <p tabIndex='0'>{label}</p>
-      )}
+        : <p tabIndex='0'>{label}</p>
+      }
       {icon}
     </div>
   )
@@ -85,7 +82,7 @@ const NormalIcon = ({ label, href = false, icon }) => {
 const TechIcon = (props) => {
   const isSmallScreen = useMediaQuery('(max-width: 860px)');
 
-  if(isSmallScreen) return <ResponsiveIcon {...props} />
+  if (isSmallScreen) return <ResponsiveIcon {...props} />
 
   return <NormalIcon {...props} />;
 };

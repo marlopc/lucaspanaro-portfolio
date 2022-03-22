@@ -8,18 +8,18 @@ import { footerContent } from '../lib/translations';
 
 const Footer = () => {
   const { locale } = useRouter();
-  const { message_1, message_2 } = footerContent[locale]; 
+  const { firstMessage, secondMessage } = footerContent[locale];
 
   return (
     <>
       <div className={styles.footer_info}>
         <div className={styles.footer_text}>
-          <small>{message_1}</small>
-          <p>{message_2}</p>
+          <small>{firstMessage}</small>
+          <p>{secondMessage}</p>
         </div>
         <div className={styles.footer_socials}>
           <div>
-            <a 
+            <a
               href='https://www.github.com/marlopc'
               target='_blank'
               rel='noreferrer'
@@ -28,7 +28,7 @@ const Footer = () => {
               <span id='footer-github'>Github</span>
               <GitHub size={40} />
             </a>
-            <a 
+            <a
               href='https://www.linkedin.com/in/lucas-panaro'
               target='_blank'
               rel='noreferrer'
@@ -37,7 +37,7 @@ const Footer = () => {
               <span id='footer-linkedin'>LinkedIn</span>
               <LinkedIn size={40} />
             </a>
-            <a 
+            <a
               href='https://www.instagram.com/lucaspanaro1'
               target='_blank'
               rel='noreferrer'

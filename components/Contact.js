@@ -16,17 +16,17 @@ const ErrorAlert = ({ error, message }) => {
 
 const Contact = () => {
   const { locale } = useRouter();
-  
+
   const {
     title,
     name,
     email,
     message,
     send,
-    send_load,
-    send_finish,
-    final_message,
-    ...error_messages
+    sendLoad,
+    sendFinish,
+    finalMessage,
+    ...errorMessages
   } = contactContent[locale];
 
   const containerRef = useRef();
@@ -55,85 +55,89 @@ const Contact = () => {
     <section>
       <div className={styles.container}>
         <div
-          className={`${styles.contact_background} ${animation ? "fade_in_up" : ""} ${animations.loaderSend ? styles.rounded : ""}`}
+          className={`${styles.contact_background} ${animation ? 'fade_in_up' : ''} ${animations.loaderSend ? styles.rounded : ''}`}
           ref={containerRef}
         >
           <form
-            className={`${styles.contact_form} ${animations.showFinalMessage ? styles.move_up : ""}`}
+            className={`${styles.contact_form} ${animations.showFinalMessage ? styles.move_up : ''}`}
             onSubmit={(e) => e.preventDefault()}
             noValidate
           >
             <h2>{title}</h2>
             <div className={styles.field_container}>
-              <label 
-                htmlFor="name"
-                id={(isFocused.name || form.name) ? styles.lift_label : ""}
+              <label
+                htmlFor='name'
+                id={(isFocused.name || form.name) ? styles.lift_label : ''}
               >
                 {name}
               </label>
-              <input 
-                id="name" 
-                type="text" 
-                name="name" 
-                value={form.name} 
+              <input
+                id='name'
+                type='text'
+                name='name'
+                value={form.name}
                 onChange={handleChange}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
-                className={errors.name ? styles.error : ""}
+                className={errors.name ? styles.error : ''}
                 aria-invalid={!!errors.email}
                 required
               />
-              <ErrorAlert error={errors.name} message={error_messages[errors.name]} />
+              <ErrorAlert error={errors.name} message={errorMessages[errors.name]} />
             </div>
             <div className={styles.field_container}>
-              <label 
-                htmlFor="email" 
-                id={(isFocused.email || form.email) ? styles.lift_label : ""}
+              <label
+                htmlFor='email'
+                id={(isFocused.email || form.email) ? styles.lift_label : ''}
               >
                 {email}
               </label>
-              <input 
-                id="email" 
-                type="email" 
-                name="email" 
-                value={form.email} 
+              <input
+                id='email'
+                type='email'
+                name='email'
+                value={form.email}
                 onChange={handleChange}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
-                className={errors.email ? styles.error : ""}
+                className={errors.email ? styles.error : ''}
                 aria-invalid={!!errors.email}
                 required
               />
-              <ErrorAlert error={errors.email} message={error_messages[errors.email]} />
+              <ErrorAlert error={errors.email} message={errorMessages[errors.email]} />
             </div>
             <div className={styles.field_container}>
-              <label 
-                htmlFor="message"
-                id={(isFocused.message || form.message) ? styles.lift_label : ""}
+              <label
+                htmlFor='message'
+                id={(isFocused.message || form.message) ? styles.lift_label : ''}
               >
                 {message}
               </label>
-              <textarea 
-                id="message"
-                name="message" 
-                value={form.message} 
+              <textarea
+                id='message'
+                name='message'
+                value={form.message}
                 onChange={handleChange}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
-                className={errors.message ? styles.error : ""}
+                className={errors.message ? styles.error : ''}
                 aria-invalid={!!errors.message}
                 required
               />
-              <ErrorAlert error={errors.message} message={error_messages[errors.message]} />
+              <ErrorAlert error={errors.message} message={errorMessages[errors.message]} />
             </div>
             <div>
-              <button onClick={handleSend} disabled={animations.loaderSend} className={animations.loaderSend ? styles.rounded : ""}>
-                <div className={animations.loaderSend ? styles.send_load : ""}></div>
+              <button
+                onClick={handleSend}
+                disabled={animations.loaderSend}
+                className={animations.loaderSend ? styles.rounded : ''}
+              >
+                <div className={animations.loaderSend ? styles.send_load : ''}></div>
                 <span>{animations.loaderText}</span>
               </button>
             </div>
           </form>
-          {animations.showFinalMessage && <h2>{final_message}</h2>}
+          {animations.showFinalMessage && <h2>{finalMessage}</h2>}
         </div>
       </div>
     </section>

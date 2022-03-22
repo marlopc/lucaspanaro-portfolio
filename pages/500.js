@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from '../styles/ErrorPage.module.css';
 import ArrowRight from '../components/icons/ArrowRight';
+import PageHead from '../components/PageHead';
 import { custom500Content } from '../lib/translations';
 
 const Custom500 = () => {
@@ -12,8 +13,12 @@ const Custom500 = () => {
 
   return (
     <>
+      <PageHead title='Error - Lucas Panaro' />
       <Head>
-        <meta name="googlebot" content="noindex" />
+        <meta
+          name='googlebot'
+          content='noindex'
+        />
       </Head>
       <div className={styles.container}>
         <h1 className='fade_in_up'>{heading}</h1>
@@ -21,7 +26,7 @@ const Custom500 = () => {
           <p>{subheading}</p>
           <Link href='/'>
             <a className={styles.link}>
-              {link}<span><ArrowRight /></span>   
+              {link}<span><ArrowRight /></span>
             </a>
           </Link>
         </div>
