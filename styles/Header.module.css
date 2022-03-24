@@ -6,7 +6,7 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 10vh 15vw;
+  padding: 5vh 15vw;
   min-height: calc(100vh - 65px);
   overflow-x: hidden;
   -webkit-box-align: start;
@@ -15,15 +15,20 @@
 }
 
 .greeting {
+  opacity: 0;
   margin: 0;
   font-family: var(--sans-font);
   color: var(--main-color);
-  animation: fade-in-right 600ms forwards 1.5s;
   font-size: 18px;
-  -webkit-animation: fade-in-right 600ms forwards 1.5s;
+}
+
+.greeting_appear {
+  animation: fade-in-right 600ms forwards;
+  -webkit-animation: fade-in-right 600ms forwards;
 }
 
 .name {
+  opacity: 0;
   font-family: var(--sans-font);
   font-size: 70px;
   margin: 0 0 10px;
@@ -32,10 +37,13 @@
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  -webkit-animation: fade-in-right 900ms forwards 1.5s;
-  animation: fade-in-right 900ms forwards 1.5s;
   word-wrap: break-word;
   max-width: 290px;
+}
+
+.name_appear {
+  animation: fade-in-right 900ms forwards;
+  -webkit-animation: fade-in-right 900ms forwards;
 }
 
 .dev {
@@ -54,8 +62,15 @@
   -webkit-transition: .5s ease-out;
   -o-transition: .5s ease-out;
   transition: .5s ease-out;
-  -webkit-animation: fade-in-right 1500ms forwards 1.5s;
-  animation: fade-in-right 1500ms forwards 1.5s;
+}
+
+.intro {
+  opacity: 0;
+}
+
+.intro_appear {
+  animation: fade-in-right 1500ms forwards;
+  -webkit-animation: fade-in-right 1500ms forwards;
 }
 
 .devDot {
@@ -78,13 +93,12 @@
   padding: 20px 0 0 0;
   font-size: 1rem;
   font-family: var(--mono-font);
-  -webkit-animation: fade-in-right 1700ms forwards 1.5s;
-  animation: fade-in-right 1700ms forwards 1.5s;
   font-weight: bold;
   max-width: 450px;
 }
 
 .scrollDown {
+  opacity: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -94,24 +108,28 @@
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
-  animation: fade-in-up 2.2s 1.5s;
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
   align-self: center;
   color: var(--main-color);
-  font-family: var(--sans-font);
-  cursor: pointer;
+  font-family: var(--mono-font);
+  font-weight: 600;
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   display: flex;
   flex-grow: 1;
   justify-content: center;
   align-items: flex-end;
-  -webkit-animation: fade-in-up 2.2s 1.5s;
+}
+
+.scrollDown_appear {
+  animation: fade-in-up 2.2s forwards;
+  -webkit-animation: fade-in-up 2.2s forwards;
 }
 
 .scrollDown > a {
-  padding: 25px 0 50px;
+  cursor: pointer;
+  margin: 40px 0 50px;
 }
 
 @-webkit-keyframes fade-in-right {

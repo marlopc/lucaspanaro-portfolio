@@ -6,13 +6,17 @@ const handler = async (req, res) => {
     const { name, email, message } = req.body;
 
     try {
-      await transporter.sendMail({
-        from: `"Personal portfolio" <${process.env.EMAILME_EMAIL}>`,
-        to: process.env.EMAIL,
+      const mail = {
+        from: `"Personal portfolio" <${process.env.EMAILME_EMAIL ?? 'Service email'}>`,
+        to: process.env.EMAIL ?? '<My Email>',
         subject: `New message from ${name}`,
         text: `New message, email: ${email} - name: ${name} - message: ${message}`,
         html: generateHTML({ name, email, message }),
-      });
+      };
+
+      process.env.NODE_ENV === 'development'
+        ? console.log(mail)
+        : await transporter.sendMail(mail);
 
       res.status(200).send('SENT');
     } catch {

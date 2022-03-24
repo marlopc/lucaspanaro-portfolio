@@ -64,6 +64,10 @@
   font-size: 17px;
 }
 
+.bio_paragraph > p {
+  padding: 10px 0 0;
+}
+
 @media (max-width: 943px) {
   .bio_background {
     margin: 0;

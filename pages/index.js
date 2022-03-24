@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import allProjects from '../projects.json';
 import Bio from '../components/Bio';
@@ -13,6 +13,7 @@ import { sectionNames } from '../lib/translations';
 import { Loader } from '../components/Loader';
 
 const Home = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const { locale } = useRouter();
 
   const { bio, stack, projects, contact } = sectionNames[locale];
@@ -21,8 +22,8 @@ const Home = () => {
     <>
       <PageHead title='Lucas Panaro' />
       <SEO />
-      <Loader />
-      <Header />
+      <Loader isLoading={isLoading} setIsLoading={setIsLoading} />
+      <Header isLoading={isLoading} />
       <Divider section={bio} />
       <Bio />
       <Divider section={stack} />

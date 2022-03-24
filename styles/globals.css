@@ -1,6 +1,6 @@
 :root {
   --sans-font: "Poppins", sans-serif;
-  --mono-font: "Inconsolata", monospace;
+  --mono-font: "spacemono", monospace;
   --main-color: #00293c;
   --background-color: #f1f3ce;
   --background-dark-color: #b3b49d;
@@ -64,6 +64,10 @@ section {
   flex-direction: column;
   padding: 6vh 15vw;
   min-height: 95vh;
+}
+
+p {
+  line-height: 1.2em;
 }
 
 .fade_in_up {

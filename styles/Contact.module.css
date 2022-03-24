@@ -91,15 +91,17 @@
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  -webkit-transform: translate(4px, 25px);
-  -ms-transform: translate(4px, 25px);
-  transform: translate(4px, 25px);
   font-size: 18px;
   -webkit-transition: -webkit-transform 250ms;
   transition: -webkit-transform 250ms;
   -o-transition: transform 250ms;
   transition: transform 250ms;
   transition: transform 250ms, -webkit-transform 250ms;
+  transform: translate(4px, 30px);
+  -ms-transform: translate(4px, 30px);
+  -webkit-transform: translate(4px, 30px);
+  -moz-transform: translate(4px, 30px);
+  -o-transform: translate(4px, 30px);
 }
 
 #lift_label {

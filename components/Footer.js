@@ -2,7 +2,6 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import styles from '../styles/Footer.module.css';
 import GitHub from './icons/GitHub';
-import Instagram from './icons/Instagram';
 import LinkedIn from './icons/LinkedIn';
 import { footerContent } from '../lib/translations';
 
@@ -14,7 +13,7 @@ const Footer = () => {
     <>
       <div className={styles.footer_info}>
         <div className={styles.footer_text}>
-          <small>{firstMessage}</small>
+          <small dangerouslySetInnerHTML={{ __html: firstMessage }} />
           <p>{secondMessage}</p>
         </div>
         <div className={styles.footer_socials}>
@@ -36,15 +35,6 @@ const Footer = () => {
             >
               <span id='footer-linkedin'>LinkedIn</span>
               <LinkedIn size={40} />
-            </a>
-            <a
-              href='https://www.instagram.com/lucaspanaro1'
-              target='_blank'
-              rel='noreferrer'
-              aria-labelledby='footer-instagram'
-            >
-              <span id='footer-instagram'>Instagram</span>
-              <Instagram size={40} />
             </a>
           </div>
         </div>

@@ -22,9 +22,6 @@ const Contact = () => {
     name,
     email,
     message,
-    send,
-    sendLoad,
-    sendFinish,
     finalMessage,
     ...errorMessages
   } = contactContent[locale];

@@ -6,8 +6,8 @@ const useContactAnimation = (isSending, cb) => {
   const { locale } = useRouter();
   const {
     send,
-    send_load,
-    send_finish,
+    sendLoad,
+    sendFinish,
   } = contactContent[locale];
 
   const initialAnimations = useMemo(() => ({
@@ -21,13 +21,13 @@ const useContactAnimation = (isSending, cb) => {
   const animateSending = useCallback(() => {
     setAnimations((prev) => ({
       ...prev,
-      loaderText: send_load,
+      loaderText: sendLoad,
       loaderSend: true,
     }));
     const step1 = setTimeout(() => {
       setAnimations((prev) => ({
         ...prev,
-        loaderText: send_finish,
+        loaderText: sendFinish,
       }));
     }, 1500);
     const step2 = setTimeout(() => {
@@ -63,4 +63,4 @@ const useContactAnimation = (isSending, cb) => {
   return animations;
 }
 
-export default useContactAnimation
+export default useContactAnimation;

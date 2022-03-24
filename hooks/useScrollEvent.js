@@ -21,8 +21,6 @@ const useScrollEvent = ({ scrollUpCb, scrollDownCb }) => {
       window.removeEventListener('scroll', handleNavigation);
     };
   }, [handleNavigation]);
-  
-  return;
 };
 
 export default useScrollEvent;

@@ -1,5 +1,5 @@
 .button {
-  font-family: "Inconsolata", monospace;
+  font-family: var(--mono-font);
   font-size: 20px;
   background-color: transparent;
   -webkit-transition: background-color 400ms;

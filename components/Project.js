@@ -26,41 +26,43 @@ const Project = ({ project }) => {
       >
         {project.name}
       </span>
-      <div className={styles.overflow}>
-        <div className={styles.image}>
-          <Image
-            src={project.image}
-            layout='fill'
-            alt={project.name}
-          />
+      <div className={styles.openHover}>
+        <div className={styles.overflow}>
+          <div className={styles.image}>
+            <Image
+              src={project.image}
+              layout='fill'
+              alt={project.name}
+            />
+          </div>
+          <div className={styles.links}>
+            {project.link && (
+              <a
+                href={project.link}
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label={`${visit} ${project.name}`}
+              >
+                <ExternalLink size={34} />
+                <span>{visit}</span>
+              </a>
+            )}
+            {project.repo && (
+              <a
+                href={project.repo}
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label={`${project.name} repo`}
+              >
+                <GitHub size={34} />
+                <span>Repo</span>
+              </a>
+            )}
+          </div>
         </div>
-        <div className={styles.links}>
-          {project.link && (
-            <a
-              href={project.link}
-              target='_blank'
-              rel='noopener noreferrer'
-              aria-label={`${visit} ${project.name}`}
-            >
-              <ExternalLink size={34} />
-              <span>{visit}</span>
-            </a>
-          )}
-          {project.repo && (
-            <a
-              href={project.repo}
-              target='_blank'
-              rel='noopener noreferrer'
-              aria-label={`${project.name} repo`}
-            >
-              <GitHub size={34} />
-              <span>Repo</span>
-            </a>
-          )}
+        <div className={styles.stackContainer}>
+          {project.tech.map(tech => <Tech tech={tech} key={tech} />)}
         </div>
-      </div>
-      <div className={styles.stackContainer}>
-        {project.tech.map(tech => <Tech tech={tech} key={tech} />)}
       </div>
     </div>
   )

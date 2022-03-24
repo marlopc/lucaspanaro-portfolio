@@ -17,7 +17,7 @@ const initialFocused = {
 const useContactForm = () => {
   const [isSending, setIsSending] = useState(false);
   const [isFocused, setIsFocused] = useState(initialFocused);
-  
+
   const { validateForm, validateField } = useForm();
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
@@ -68,7 +68,7 @@ const useContactForm = () => {
       [e.target.name]: false,
     });
   };
-  
+
   return {
     handleBlur,
     handleChange,
@@ -82,4 +82,4 @@ const useContactForm = () => {
   };
 }
 
-export default useContactForm
+export default useContactForm;

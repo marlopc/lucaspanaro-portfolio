@@ -41,9 +41,12 @@
 }
 
 .jsxComponent::before {
+  font-family: monospace;
   content: '<';
 }
 
 .jsxComponent::after {
+  font-family: monospace;
   content: '/>';
+  margin-left: 5px;
 }

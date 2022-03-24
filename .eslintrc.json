@@ -6,8 +6,7 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "standard",
-        "next/core-web-vitals"
+        "standard"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -23,7 +22,6 @@
       "comma-dangle": "off",
       "semi": "off",
       "padded-blocks": "off",
-      "react/prop-types": "off",
-      "@next/next/no-img-element": "off"
+      "react/prop-types": "off"
     }
 }

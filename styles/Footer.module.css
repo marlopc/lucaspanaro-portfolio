@@ -18,14 +18,15 @@
 }
 
 .footer_text {
-  font-family: var(--sans-font);
+  font-family: var(--mono-font);
   font-size: 15px;
   width: 50vw;
 }
 
 .footer_text p {
-  padding: 0;
+  padding: 3px 0 0 0;
   color: var(--main-color);
+  font-family: var(--sans-font);
 }
 
 .footer_text small {
@@ -41,6 +42,7 @@
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  margin-bottom: 15px;
 }
 
 .footer_socials div {
@@ -68,6 +70,7 @@
 
 .footer_socials > div > a > :first-child {
   font-size: 12px;
+  font-family: var(--mono-font);
   opacity: 0;
   -webkit-transform: translateY(10px);
   -ms-transform: translateY(10px);

@@ -15,10 +15,7 @@ const Bio = () => {
 
   const {
     title,
-    firstParagraph,
-    secondParagraph,
-    thirdParagraph,
-    fourthParagraph
+    paragraph
   } = bioContent[locale];
 
   return (
@@ -27,13 +24,7 @@ const Bio = () => {
         <div className={`${styles.bio_background} ${animation ? 'fade_in_up' : ''}`} ref={containerRef}>
           <div className={styles.bio_paragraph}>
             <h2>{title}</h2>
-            <p>
-              <br/>
-              {firstParagraph} <br/><br/>
-              {secondParagraph} <br/><br/>
-              {thirdParagraph} <br/><br/>
-              {fourthParagraph} <br/>
-            </p>
+            <p dangerouslySetInnerHTML={{ __html: paragraph }}/>
           </div>
           <img
             className={styles.bio_image}

@@ -41,7 +41,7 @@ const useResponsiveMenu = () => {
       if (!e.shiftKey && e.target === refs.current[refs.current.length - 1]) {
         refs.current[0].focus();
         e.preventDefault();
-      } 
+      }
 
       if (e.shiftKey && e.target === refs.current[0]) {
         refs.current[refs.current.length - 1].focus();

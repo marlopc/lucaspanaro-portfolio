@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import PortfolioLogo from '../components/icons/PortfolioLogo';
 import styles from '../styles/Loader.module.css';
 
-const LOADER_SHOW_TIME = 1500;
+const LOADER_SHOW_TIME = 1000;
 
-export const Loader = () => {
-  const [isShowing, setIsShowing] = useState(true);
+export const Loader = ({ isLoading, setIsLoading }) => {
 
   useEffect(() => {
     document.documentElement.style.overflow = 'hidden';
     const loaderTimeout = setTimeout(() => {
-      setIsShowing(false);
+      setIsLoading(false);
       document.documentElement.style.overflow = 'auto';
     }, LOADER_SHOW_TIME);
 
@@ -20,7 +19,7 @@ export const Loader = () => {
   }, []);
 
   return (
-    <div className={`${styles.container} ${!isShowing ? styles.hide : ''}`}>
+    <div className={`${styles.container} ${!isLoading ? styles.hide : ''}`}>
       <PortfolioLogo className={styles.logo} />
     </div>
   )

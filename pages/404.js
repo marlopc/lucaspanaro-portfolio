@@ -23,7 +23,7 @@ const Custom404 = () => {
       <div className={styles.container}>
         <h1 className='fade_in_up'>{heading}</h1>
         <div className='fade_in_up_200'>
-          <p>{subheading}</p>
+          <p dangerouslySetInnerHTML={{ __html: subheading }} />
           <Link href='/'>
             <a className={styles.link}>
               {link}<span><ArrowRight /></span>
