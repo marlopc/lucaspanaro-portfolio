@@ -186,7 +186,7 @@
 
 @media (max-width: 360px), (max-height: 520px) {
   .headerContainer {
-    padding: 4vh 10vw;
+    padding: 2vh 10vw 6vh;
     width: 100%;
   }
 
