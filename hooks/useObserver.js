@@ -1,10 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const useObserver = (ref, margin = 0, { disableIf = null } = {}) => {
   const [animation, setAnimation] = useState(false);
-  const rootMargin = typeof margin === 'string'
-    ? margin
-    : `${margin}px`;
+  const rootMargin = typeof margin === "string" ? margin : `${margin}px`;
 
   useEffect(() => {
     let intersectionObserver;
@@ -12,15 +10,18 @@ const useObserver = (ref, margin = 0, { disableIf = null } = {}) => {
     if (disableIf && window.matchMedia(disableIf).matches) {
       setAnimation(true);
     } else {
-      intersectionObserver = new IntersectionObserver((entries, observer) => {
-        const el = entries[0];
-        if (el.isIntersecting && !animation) {
-          setAnimation(true);
-          observer.disconnect();
+      intersectionObserver = new IntersectionObserver(
+        (entries, observer) => {
+          const el = entries[0];
+          if (el.isIntersecting && !animation) {
+            setAnimation(true);
+            observer.disconnect();
+          }
+        },
+        {
+          rootMargin,
         }
-      }, {
-        rootMargin,
-      });
+      );
 
       intersectionObserver.observe(ref.current);
     }

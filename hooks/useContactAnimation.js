@@ -1,20 +1,19 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useRouter } from 'next/router';
-import { contactContent } from '../lib/translations';
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/router";
+import { contactContent } from "../lib/translations";
 
 const useContactAnimation = (isSending, cb) => {
   const { locale } = useRouter();
-  const {
-    send,
-    sendLoad,
-    sendFinish,
-  } = contactContent[locale];
+  const { send, sendLoad, sendFinish } = contactContent[locale];
 
-  const initialAnimations = useMemo(() => ({
-    loaderSend: false,
-    loaderText: send,
-    showFinalMessage: false,
-  }), [locale]);
+  const initialAnimations = useMemo(
+    () => ({
+      loaderSend: false,
+      loaderText: send,
+      showFinalMessage: false,
+    }),
+    [locale]
+  );
 
   const [animations, setAnimations] = useState(initialAnimations);
 
@@ -61,6 +60,6 @@ const useContactAnimation = (isSending, cb) => {
   }, [isSending]);
 
   return animations;
-}
+};
 
 export default useContactAnimation;

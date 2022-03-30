@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
 
-const PortfolioLogo = ({ className = '' }) => {
+const PortfolioLogo = ({ className = "" }) => {
   return (
     <div className={`logo ${className}`}>
-      <p>LP<span>.</span></p>
+      <p>
+        LP<span>.</span>
+      </p>
     </div>
-  )
+  );
 };
 
 export default PortfolioLogo;

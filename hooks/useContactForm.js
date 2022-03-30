@@ -1,11 +1,11 @@
-import { useCallback, useState } from 'react';
-import useForm from './useForm';
-import sendMail from '../lib/mailer/sendMail';
+import { useCallback, useState } from "react";
+import useForm from "./useForm";
+import sendMail from "../lib/mailer/sendMail";
 
 const initialForm = {
-  name: '',
-  email: '',
-  message: '',
+  name: "",
+  email: "",
+  message: "",
 };
 
 const initialFocused = {
@@ -80,6 +80,6 @@ const useContactForm = () => {
     form,
     errors,
   };
-}
+};
 
 export default useContactForm;

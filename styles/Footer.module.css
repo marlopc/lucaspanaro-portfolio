@@ -140,6 +140,10 @@
     padding: 0 5px;
   }
 
+  .footer_socials {
+    margin: 0;
+  }
+
   .footer_socials span {
     margin: 0 10px;
     font-size: 25px;

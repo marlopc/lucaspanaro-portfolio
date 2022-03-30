@@ -1,9 +1,9 @@
-import React from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import styles from '../styles/Nav.module.css';
-import { encodeLower } from '../lib/encode';
-import { navContent, sectionNames } from '../lib/translations';
+import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import styles from "../styles/Nav.module.css";
+import { encodeLower } from "../lib/encode";
+import { navContent, sectionNames } from "../lib/translations";
 
 const NavDesktop = () => {
   const { pathname, locale } = useRouter();
@@ -14,30 +14,22 @@ const NavDesktop = () => {
     <>
       <li>
         <Link href={`/#${encodeLower(sections.bio)}`}>
-          <a>
-            {navNames.bio}
-          </a>
+          <a>{navNames.bio}</a>
         </Link>
       </li>
       <li>
         <Link href={`/#${encodeLower(sections.stack)}`}>
-          <a>
-            {navNames.stack}
-          </a>
+          <a>{navNames.stack}</a>
         </Link>
       </li>
       <li>
         <Link href={`/#${encodeLower(sections.projects)}`}>
-          <a>
-            {navNames.projects}
-          </a>
+          <a>{navNames.projects}</a>
         </Link>
       </li>
       <li>
         <Link href={`/#${encodeLower(sections.contact)}`}>
-          <a>
-            {navNames.contact}
-          </a>
+          <a>{navNames.contact}</a>
         </Link>
       </li>
     </>
@@ -47,18 +39,18 @@ const NavDesktop = () => {
     <nav className={styles.nav}>
       <ul>
         <li>
-          <Link href={pathname === '/' ? `/#${encodeLower(sections.home)}` : '/'}>
-            <a>
-              {navNames.home}
-            </a>
+          <Link
+            href={pathname === "/" ? `/#${encodeLower(sections.home)}` : "/"}
+          >
+            <a>{navNames.home}</a>
           </Link>
         </li>
-        {pathname === '/' && mainPageNavigation}
+        {pathname === "/" && mainPageNavigation}
         <li>
           <a
             href={process.env.NEXT_PUBLIC_CV_DRIVE}
-            target='_blank'
-            rel='noopener noreferrer'
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {navNames.resume}
           </a>

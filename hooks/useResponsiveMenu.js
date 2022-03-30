@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import useRefs from './useRefs';
+import { useState } from "react";
+import useRefs from "./useRefs";
 
 const useResponsiveMenu = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -22,22 +22,22 @@ const useResponsiveMenu = () => {
   const handleKeyDown = (e) => {
     if (!menuIsOpen) return;
 
-    if (e.key === 'Home') {
+    if (e.key === "Home") {
       refs.current[1].focus();
       e.preventDefault();
     }
 
-    if (e.key === 'End') {
+    if (e.key === "End") {
       refs.current[refs.current.length - 1].focus();
       e.preventDefault();
     }
 
-    if (e.key === 'Escape') {
+    if (e.key === "Escape") {
       menuIsOpen && closeMenu();
       e.preventDefault();
     }
 
-    if (e.key === 'Tab') {
+    if (e.key === "Tab") {
       if (!e.shiftKey && e.target === refs.current[refs.current.length - 1]) {
         refs.current[0].focus();
         e.preventDefault();
