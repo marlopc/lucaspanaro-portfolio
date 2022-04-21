@@ -7,7 +7,9 @@ const useObserver = (ref, margin = 0, { disableIf = null } = {}) => {
   useEffect(() => {
     let intersectionObserver;
 
-    if (disableIf && window.matchMedia(disableIf).matches) {
+    const isCompatible = window.IntersectionObserver !== undefined;
+
+    if (!isCompatible || (disableIf && window.matchMedia(disableIf).matches)) {
       setAnimation(true);
     } else {
       intersectionObserver = new IntersectionObserver(
