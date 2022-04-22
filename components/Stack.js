@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
 import { useRouter } from "next/router";
-import styles from "../styles/Stack.module.css";
+import React, { useRef } from "react";
 import useObserver from "../hooks/useObserver";
 import useStackTabs from "../hooks/useStackTabs";
+import { sectionNames } from "../lib/translations";
+import styles from "../styles/Stack.module.css";
 import CSSIcon from "./Stack/svg/CSSIcon";
 import ExpressIcon from "./Stack/svg/ExpressIcon";
 import HTMLIcon from "./Stack/svg/HTMLIcon";
@@ -14,7 +15,6 @@ import PostgresIcon from "./Stack/svg/PostgresIcon";
 import ReactIcon from "./Stack/svg/ReactIcon";
 import SequelizeIcon from "./Stack/svg/SequelizeIcon";
 import TechIcon from "./Stack/TechIcon";
-import { sectionNames } from "../lib/translations";
 
 const TabButton = React.forwardRef(function TabButton(
   { tabId, label, currentTab, ...rest },
