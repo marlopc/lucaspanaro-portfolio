@@ -47,13 +47,13 @@
     margin-left: -24px;
     transition: opacity 200ms ease, margin 200ms ease;
   }
-  
+
   .link:hover,
   .link:focus {
     box-shadow: 0px 4px 6px #3535359c;
     transform: scale(1.02);
   }
-  
+
   .link:hover > span,
   .link:focus > span {
     opacity: 1;

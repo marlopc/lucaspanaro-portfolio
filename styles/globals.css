@@ -9,11 +9,11 @@
   scrollbar-width: thin;
 }
 
-:root::-webkit-scrollbar{
+:root::-webkit-scrollbar {
   width: 7px;
 }
 
-:root::-webkit-scrollbar-thumb{
+:root::-webkit-scrollbar-thumb {
   background-color: var(--main-color);
 }
 
@@ -27,7 +27,8 @@ body {
   scroll-behavior: smooth;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: var(--sans-font);
 }
 

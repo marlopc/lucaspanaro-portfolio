@@ -45,7 +45,8 @@
   padding: 0 10px 6px;
   cursor: pointer;
   border-left: 2px solid var(--main-color);
-  background: linear-gradient(to left, transparent 50%, var(--main-color) 50%) right;
+  background: linear-gradient(to left, transparent 50%, var(--main-color) 50%)
+    right;
   background-size: 200%;
   transition: transform 200ms ease, background 300ms ease, color 300ms ease;
 }
@@ -63,5 +64,5 @@
 
 .nav ul li:hover > a,
 .nav ul li:focus-within > a {
-  color: var(--background-color)
+  color: var(--background-color);
 }

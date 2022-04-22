@@ -143,17 +143,17 @@
 
 .icon_container:focus-within .html_icon path,
 .icon_container:hover .html_icon path {
-  fill: #E44D26;
+  fill: #e44d26;
 }
 
 .icon_container:focus-within .css_icon path,
 .icon_container:hover .css_icon path {
-  fill: #1572B6;
+  fill: #1572b6;
 }
 
 .icon_container:focus-within .js_icon path,
 .icon_container:hover .js_icon path {
-  fill: #F0DB4F;
+  fill: #f0db4f;
 }
 
 .icon_container:focus-within .next_icon path,
@@ -163,7 +163,7 @@
 
 .icon_container:focus-within .mui_icon path,
 .icon_container:hover .mui_icon path {
-  fill: #1FA6CA;
+  fill: #1fa6ca;
 }
 
 .react_icon g circle {
@@ -173,12 +173,12 @@
 
 .icon_container:focus-within .react_icon g > *,
 .icon_container:hover .react_icon g > * {
-  fill: #61DAFB;
+  fill: #61dafb;
 }
 
 .icon_container:focus-within .node_icon path,
 .icon_container:hover .node_icon path {
-  fill: #83CD29;
+  fill: #83cd29;
 }
 
 .icon_container:focus-within .express_icon path,
@@ -193,7 +193,7 @@
 
 .icon_container:focus-within .mongo_icon path,
 .icon_container:hover .mongo_icon path {
-  fill: #4FAA41;
+  fill: #4faa41;
 }
 
 .icon_container:focus-within .postgre_icon path,

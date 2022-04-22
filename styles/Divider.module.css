@@ -20,7 +20,7 @@
 
 .container > span::before,
 .container > span::after {
-  content: ' ';
+  content: " ";
   width: 100%;
   height: 1px;
   background: var(--main-color);
@@ -28,11 +28,11 @@
 
 .jsxComponent::before {
   font-family: monospace;
-  content: '<';
+  content: "<";
 }
 
 .jsxComponent::after {
   font-family: monospace;
-  content: '/>';
+  content: "/>";
   margin-left: 5px;
 }

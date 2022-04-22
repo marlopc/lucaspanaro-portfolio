@@ -42,9 +42,10 @@
   width: max-content;
   padding: 0 5px 0 0;
   margin: 0;
-  background: linear-gradient(to left, transparent 50%, var(--main-color) 50%) right;
+  background: linear-gradient(to left, transparent 50%, var(--main-color) 50%)
+    right;
   background-size: 200%;
-  transition: .5s ease-out;
+  transition: 0.5s ease-out;
 }
 
 .intro {
