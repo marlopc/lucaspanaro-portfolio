@@ -4,23 +4,15 @@
 
 .contact_background {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
   padding: 30px;
   background-color: var(--main-color);
-  -webkit-transition: all 250ms;
-  -o-transition: all 250ms;
   transition: all 250ms;
   color: var(--inner-font-color);
   font-family: var(--mono-font);
   overflow-y: hidden;
   opacity: 0;
-  -webkit-box-shadow: 0px 4px 6px #3535359c;
   box-shadow: 0px 4px 6px #3535359c;
 }
 
@@ -30,24 +22,13 @@
 }
 
 .contact_form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-animation: appear-bottom 2500ms ease-in-out;
   animation: appear-bottom 2500ms ease-in-out;
 }
 
 .contact_form > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
   margin: 5px 0;
 }
@@ -77,8 +58,6 @@
   background-color: transparent;
   border: none;
   border-bottom: 2px solid var(--inner-font-color);
-  -webkit-transition: border-bottom 250ms;
-  -o-transition: border-bottom 250ms;
   transition: border-bottom 250ms;
 }
 
@@ -88,25 +67,13 @@
 }
 
 .contact_form label {
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   font-size: 18px;
-  -webkit-transition: -webkit-transform 250ms;
-  transition: -webkit-transform 250ms;
-  -o-transition: transform 250ms;
   transition: transform 250ms;
-  transition: transform 250ms, -webkit-transform 250ms;
   transform: translate(4px, 30px);
-  -ms-transform: translate(4px, 30px);
-  -webkit-transform: translate(4px, 30px);
-  -moz-transform: translate(4px, 30px);
-  -o-transform: translate(4px, 30px);
 }
 
 #lift_label {
-  -webkit-transform: translate(-4px, 0) scale(0.8) !important;
-  -ms-transform: translate(-4px, 0) scale(0.8) !important;
   transform: translate(-4px, 0) scale(0.8) !important;
 }
 
@@ -124,8 +91,6 @@
   font-size: 16px;
   border: 2px solid var(--inner-font-color);
   padding: 0 1px;
-  -webkit-transition: border-radius 250ms;
-  -o-transition: border-radius 250ms;
   transition: border-radius 250ms;
 }
 
@@ -148,12 +113,10 @@
 .send_load {
   cursor: default;
   border-radius: 15px;
-  -webkit-animation: fullfill 1500ms forwards;
   animation: fullfill 1500ms forwards;
 }
 
 .move_up {
-  -webkit-animation: move-up 2500ms forwards ease-in-out;
   animation: move-up 2500ms forwards ease-in-out;
 }
 
@@ -168,24 +131,12 @@
   top: 40%;
   width: 100%;
   text-align: center;
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
-  -webkit-animation: fade-in 2500ms forwards;
   animation: fade-in 2500ms forwards;
 }
 
 .fade_out {
   animation: fade-in 1000ms reverse;
-}
-
-@-webkit-keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 @keyframes fade-in {
@@ -197,79 +148,24 @@
   }
 }
 
-@-webkit-keyframes appear-bottom {
-  0% {
-    -webkit-transform: translateY(110%);
-    transform: translateY(110%);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
 @keyframes appear-bottom {
   0% {
-    -webkit-transform: translateY(110%);
     transform: translateY(110%);
   }
   100% {
-    -webkit-transform: translateY(0);
     transform: translateY(0);
-  }
-}
-
-@-webkit-keyframes move-up {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  25% {
-    -webkit-transform: translateY(5%);
-    transform: translateY(5%);
-  }
-  100% {
-    -webkit-transform: translateY(-150%);
-    transform: translateY(-150%);
   }
 }
 
 @keyframes move-up {
   0% {
-    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
   25% {
-    -webkit-transform: translateY(5%);
     transform: translateY(5%);
   }
   100% {
-    -webkit-transform: translateY(-150%);
     transform: translateY(-150%);
-  }
-}
-
-@-webkit-keyframes fullfill {
-  0% {
-    width: 0;
-  }
-  25% {
-    width: 10%;
-  }
-  35% {
-    width: 20%;
-  }
-  75% {
-    width: 50%;
-  }
-  85% {
-    width: 55%;
-  }
-  90% {
-    width: 85%;
-  }
-  100% {
-    width: 100%;
   }
 }
 

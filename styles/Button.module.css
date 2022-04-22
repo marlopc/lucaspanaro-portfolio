@@ -2,14 +2,8 @@
   font-family: var(--mono-font);
   font-size: 20px;
   background-color: transparent;
-  -webkit-transition: background-color 400ms;
-  -o-transition: background-color 400ms;
   transition: background-color 400ms;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
-  height: -webkit-max-content;
-  height: -moz-max-content;
   height: max-content;
   padding: 10px;
   border-radius: 5px;

@@ -5,16 +5,10 @@
 .navContainer {
   position: fixed;
   top: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   max-height: 67px;
-  -webkit-transition: top 500ms;
-  -o-transition: top 500ms;
   transition: top 500ms;
   z-index: 4;
   background-color: var(--background-color);
@@ -23,27 +17,17 @@
 .navContainerHidden {
   position: fixed;
   top: -75px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   max-height: 67px;
-  -webkit-transition: top 500ms;
-  -o-transition: top 500ms;
   transition: top 500ms;
   z-index: 4;
   background-color: var(--background-color);
 }
 
 .nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   padding: 0px 20px;
   font-family: var(--mono-font);
@@ -51,8 +35,6 @@
 
 .nav ul {
   list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 0px 20px;
 }
@@ -63,30 +45,18 @@
   padding: 0 10px 6px;
   cursor: pointer;
   border-left: 2px solid var(--main-color);
-  background: -webkit-gradient(linear, right top, left top, color-stop(50%, transparent), color-stop(50%, var(--main-color))) right;
-  background: -o-linear-gradient(right, transparent 50%, var(--main-color) 50%) right;
   background: linear-gradient(to left, transparent 50%, var(--main-color) 50%) right;
   background-size: 200%;
-  -webkit-transition: background 300ms ease, color 300ms ease, -webkit-transform 200ms ease;
-  transition: background 300ms ease, color 300ms ease, -webkit-transform 200ms ease;
-  -o-transition: transform 200ms ease, background 300ms ease, color 300ms ease;
   transition: transform 200ms ease, background 300ms ease, color 300ms ease;
-  transition: transform 200ms ease, background 300ms ease, color 300ms ease, -webkit-transform 200ms ease;
 }
 
 .nav ul li a {
   text-transform: uppercase;
   transition: color 100ms ease;
-  -webkit-transition: color 100ms ease;
-  -moz-transition: color 100ms ease;
-  -ms-transition: color 100ms ease;
-  -o-transition: color 100ms ease;
 }
 
 .nav ul li:hover,
 .nav ul li:focus-within {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
   transform: scale(1.1);
   background-position: left;
 }

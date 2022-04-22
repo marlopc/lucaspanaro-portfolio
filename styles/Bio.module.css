@@ -5,51 +5,29 @@
 }
 
 .bio_background {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 15px;
   background-color: var(--main-color);
-  -webkit-transition: all 250ms;
-  -o-transition: all 250ms;
   transition: all 250ms;
   opacity: 0;
-  -webkit-box-shadow: 0px 4px 6px #3535359c;
   box-shadow: 0px 4px 6px #3535359c;
 }
 
 .bio_image {
   position: relative;
-  -ms-flex-item-align: start;
   align-self: flex-start;
-  -webkit-transform: translate(-25px, -45px);
-  -ms-transform: translate(-25px, -45px);
   transform: translate(-25px, -45px);
-  -webkit-filter: grayscale(1);
   filter: grayscale(1);
-  -webkit-transition: -webkit-filter 250ms;
-  transition: -webkit-filter 250ms;
-  -o-transition: filter 250ms;
   transition: filter 250ms;
-  transition: filter 250ms, -webkit-filter 250ms;
   width: 20vw;
   max-width: 250px;
-  -o-object-fit: scale-down;
   object-fit: scale-down;
-  -webkit-transition: -webkit-transform 200ms ease, -webkit-box-shadow 200ms ease;
-  transition: -webkit-transform 200ms ease, -webkit-box-shadow 200ms ease;
-  -o-transition: transform 200ms ease, box-shadow 200ms ease;
   transition: transform 200ms ease, box-shadow 200ms ease;
-  transition: transform 200ms ease, box-shadow 200ms ease, -webkit-transform 200ms ease, -webkit-box-shadow 200ms ease;
 }
 
 .bio_image:hover {
-  -webkit-filter: grayscale(0);
   filter: grayscale(0);
-  -webkit-box-shadow: 10px 10px 15px #1515154d;
   box-shadow: 10px 10px 15px #1515154d;
-  -webkit-transform: translate(-28px, -48px);
-  -ms-transform: translate(-28px, -48px);
   transform: translate(-28px, -48px);
 }
 
@@ -71,39 +49,23 @@
 @media (max-width: 943px) {
   .bio_background {
     margin: 0;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-    -ms-flex-direction: column-reverse;
     flex-direction: column-reverse;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
   }
 
   .bio_background:hover {
-    -webkit-transform: translate(0);
-    -ms-transform: translate(0);
     transform: translate(0);
   }
 
   .bio_image {
-    -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
     align-self: center;
     width: 50%;
-    -webkit-transform: translateY(-50px);
-    -ms-transform: translateY(-50px);
     transform: translateY(-50px);
-    -webkit-transition: all 250ms;
-    -o-transition: all 250ms;
     transition: all 250ms;
   }
 
   .bio_image:hover {
-    -webkit-box-shadow: 10px 10px 15px #1515154d;
     box-shadow: 10px 10px 15px #1515154d;
-    -webkit-transform: translate(-3px, -55px);
-    -ms-transform: translate(-3px, -55px);
     transform: translate(-3px, -55px);
   }
 

@@ -208,8 +208,6 @@
   }
 
   .stack_data {
-    -webkit-column-gap: 4vw;
-    -moz-column-gap: 4vw;
     column-gap: 4vw;
     height: 160px;
   }
