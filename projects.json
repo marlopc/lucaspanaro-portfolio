@@ -1,37 +1,61 @@
 [
   {
     "id": 1,
-    "name": "People app",
+    "name": "Space Tourism",
+    "tech": ["NextJS", "React", "Typescript", "Styled-Components"],
+    "link": "https://challenge-space.vercel.app/",
+    "image": "/assets/images/projects/space.webp",
+    "repo": "https://github.com/marlopc/challenge-space"
+  },
+  {
+    "id": 2,
+    "name": "Rock, Paper, Scissors",
+    "tech": ["NextJS", "React", "Typescript", "CSS"],
+    "link": "https://challenge-rock-paper-scissors.vercel.app/",
+    "image": "/assets/images/projects/rock-paper-scissors.webp",
+    "repo": "https://github.com/marlopc/challenge-rock-paper-scissors"
+  },
+  {
+    "id": 3,
+    "name": "Snap",
+    "tech": ["React", "Typescript", "CSS"],
+    "link": "https://challenge-landing-khaki.vercel.app/",
+    "image": "/assets/images/projects/snap.webp",
+    "repo": "https://github.com/marlopc/challenge-landing"
+  },
+  {
+    "id": 4,
+    "name": "People App",
     "tech": ["React", "Typescript", "CSS"],
     "link": "https://simple-people-app.vercel.app/",
     "image": "/assets/images/projects/people.webp",
     "repo": "https://github.com/marlopc/simple-people-app"
   },
   {
-    "id": 2,
+    "id": 5,
     "name": "Portfolio",
     "tech": ["NextJS", "CSS"],
     "image": "/assets/images/projects/lp.webp",
     "repo": "https://github.com/marlopc/lucaspanaro-portfolio"
   },
   {
-    "id": 3,
-    "name": "Lo hice yo",
+    "id": 6,
+    "name": "Lo Hice Yo",
     "tech": ["NextJS", "MongoDB", "Mongoose", "CSS"],
     "link": "https://lo-hice-yo.vercel.app/",
     "image": "/assets/images/projects/lo-hice-yo.webp"
   },
   {
-    "id": 4,
-    "name": "On the rocks",
+    "id": 7,
+    "name": "On The Rocks",
     "tech": ["React", "Express", "NodeJS", "PostgreSQL", "Sequelize", "CSS"],
     "image": "/assets/images/projects/on-the-rocks.webp",
     "link": "https://on-the-rocks-orcin.vercel.app/",
     "repo": "https://github.com/Iron-Liver/On-The-Rocks"
   },
   {
-    "id": 5,
-    "name": "Dogs app",
+    "id": 8,
+    "name": "Dogs App",
     "tech": ["React", "Express", "NodeJS", "PostgreSQL", "Sequelize", "CSS"],
     "image": "/assets/images/projects/dogs-app.webp",
     "link": "https://dogs-webapp.netlify.app/",
