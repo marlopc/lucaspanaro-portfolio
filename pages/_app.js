@@ -5,31 +5,36 @@ import Layout from "../components/Layout";
 import "../public/assets/fonts/style.css";
 import "../styles/globals.css";
 
-const AppHead = () => {
+const GoogleAnalytics = () => {
   const GOOGLE_ANALYTICS_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
+  if (!GOOGLE_ANALYTICS_ID) return null;
+
   return (
-    <Head>
-      {GOOGLE_ANALYTICS_ID && (
-        <>
-          <Script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
-          ></Script>
-          <Script
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
+    <>
+      <Script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`}
+      ></Script>
+      <Script
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
     
-      gtag('config', ${GOOGLE_ANALYTICS_ID})
+      gtag('config', '${GOOGLE_ANALYTICS_ID}')
       `,
-            }}
-          ></Script>
-        </>
-      )}
+        }}
+      ></Script>
+    </>
+  );
+};
+
+const AppHead = () => {
+  return (
+    <Head>
       <link
         rel="preload"
         href="/assets/fonts/Poppins-SemiBold.ttf"
@@ -51,6 +56,7 @@ const AppHead = () => {
 function MyApp({ Component, pageProps }) {
   return (
     <>
+      <GoogleAnalytics />
       <AppHead />
       <Layout>
         <Component {...pageProps} />
