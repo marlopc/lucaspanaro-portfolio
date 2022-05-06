@@ -1,9 +1,11 @@
 @font-face {
   font-family: 'spacemono';
   src: url('SpaceMono-Regular.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Poppins';
   src: url('Poppins-SemiBold.ttf');
+  font-display: swap;
 }
