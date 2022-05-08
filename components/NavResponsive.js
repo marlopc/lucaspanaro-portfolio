@@ -1,8 +1,8 @@
 import React from "react";
-import useMediaQuery from "../hooks/useMediaQuery";
-import useResponsiveMenu from "../hooks/useResponsiveMenu";
-import Burger from "./Burger";
-import ResponsiveMenu from "./ResponsiveMenu";
+import Burger from "~/components/Burger";
+import ResponsiveMenu from "~/components/ResponsiveMenu";
+import useMediaQuery from "~/hooks/useMediaQuery";
+import useResponsiveMenu from "~/hooks/useResponsiveMenu";
 
 const NavResponsive = () => {
   const isMobileLikeScreen = useMediaQuery("(max-width: 950px)");

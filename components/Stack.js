@@ -1,20 +1,20 @@
 import { useRouter } from "next/router";
 import React, { useRef } from "react";
-import useObserver from "../hooks/useObserver";
-import useStackTabs from "../hooks/useStackTabs";
-import { sectionNames } from "../lib/translations";
-import styles from "../styles/Stack.module.css";
-import CSSIcon from "./Stack/svg/CSSIcon";
-import ExpressIcon from "./Stack/svg/ExpressIcon";
-import HTMLIcon from "./Stack/svg/HTMLIcon";
-import JavascriptIcon from "./Stack/svg/JavascriptIcon";
-import MongoIcon from "./Stack/svg/MongoIcon";
-import NextIcon from "./Stack/svg/NextIcon";
-import NodeIcon from "./Stack/svg/NodeIcon";
-import PostgresIcon from "./Stack/svg/PostgresIcon";
-import ReactIcon from "./Stack/svg/ReactIcon";
-import SequelizeIcon from "./Stack/svg/SequelizeIcon";
-import TechIcon from "./Stack/TechIcon";
+import CSSIcon from "~/components/Stack/svg/CSSIcon";
+import ExpressIcon from "~/components/Stack/svg/ExpressIcon";
+import HTMLIcon from "~/components/Stack/svg/HTMLIcon";
+import JavascriptIcon from "~/components/Stack/svg/JavascriptIcon";
+import MongoIcon from "~/components/Stack/svg/MongoIcon";
+import NextIcon from "~/components/Stack/svg/NextIcon";
+import NodeIcon from "~/components/Stack/svg/NodeIcon";
+import PostgresIcon from "~/components/Stack/svg/PostgresIcon";
+import ReactIcon from "~/components/Stack/svg/ReactIcon";
+import SequelizeIcon from "~/components/Stack/svg/SequelizeIcon";
+import TechIcon from "~/components/Stack/TechIcon";
+import useObserver from "~/hooks/useObserver";
+import useStackTabs from "~/hooks/useStackTabs";
+import { sectionNames } from "~/lib/translations";
+import styles from "~/styles/Stack.module.css";
 
 const TabButton = React.forwardRef(function TabButton(
   { tabId, label, currentTab, ...rest },

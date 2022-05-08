@@ -1,8 +1,8 @@
-import React from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
-import styles from "../styles/Header.module.css";
-import { headerContent } from "../lib/translations";
+import { useRouter } from "next/router";
+import React from "react";
+import { headerContent } from "~/lib/translations";
+import styles from "~/styles/Header.module.css";
 
 const Header = ({ isLoading }) => {
   const { locale } = useRouter();

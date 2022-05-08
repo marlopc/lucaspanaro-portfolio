@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
 import { useRouter } from "next/router";
-import styles from "../styles/Contact.module.css";
-import useContactAnimation from "../hooks/useContactAnimation";
-import useContactForm from "../hooks/useContactForm";
-import useObserver from "../hooks/useObserver";
-import { contactContent } from "../lib/translations";
+import React, { useRef } from "react";
+import useContactAnimation from "~/hooks/useContactAnimation";
+import useContactForm from "~/hooks/useContactForm";
+import useObserver from "~/hooks/useObserver";
+import { contactContent } from "~/lib/translations";
+import styles from "~/styles/Contact.module.css";
 
 const ErrorAlert = ({ error, message }) => {
   return <div>{error && <small role="alert">{message}</small>}</div>;

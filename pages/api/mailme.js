@@ -1,5 +1,5 @@
-import transporter from "../../lib/config/nodeMailer";
-import generateHTML from "../../lib/mailer/generateHTML";
+import transporter from "~/lib/config/nodeMailer";
+import generateHTML from "~/lib/mailer/generateHTML";
 
 const handler = async (req, res) => {
   if (req.method === "POST") {

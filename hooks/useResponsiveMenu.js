@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useRefs from "./useRefs";
+import useRefs from "~/hooks/useRefs";
 
 const useResponsiveMenu = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);

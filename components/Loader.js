@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import PortfolioLogo from "../components/icons/PortfolioLogo";
-import styles from "../styles/Loader.module.css";
+import PortfolioLogo from "~/components/icons/PortfolioLogo";
+import styles from "~/styles/Loader.module.css";
 
 const LOADER_SHOW_TIME = 1000;
 

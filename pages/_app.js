@@ -1,9 +1,9 @@
 import Head from "next/head";
 import Script from "next/script";
 import React from "react";
-import Layout from "../components/Layout";
-import "../public/assets/fonts/style.css";
-import "../styles/globals.css";
+import Layout from "~/components/Layout";
+import "~/public/assets/fonts/style.css";
+import "~/styles/globals.css";
 
 const GoogleAnalytics = () => {
   const GOOGLE_ANALYTICS_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;

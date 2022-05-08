@@ -1,12 +1,12 @@
-import React, { useRef } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import styles from "../styles/Project.module.css";
-import useObserver from "../hooks/useObserver";
-import Tech from "./Tech";
-import ExternalLink from "./icons/ExternalLink";
-import GitHub from "./icons/GitHub";
-import { projectContent } from "../lib/translations";
+import React, { useRef } from "react";
+import ExternalLink from "~/components/icons/ExternalLink";
+import GitHub from "~/components/icons/GitHub";
+import Tech from "~/components/Tech";
+import useObserver from "~/hooks/useObserver";
+import { projectContent } from "~/lib/translations";
+import styles from "~/styles/Project.module.css";
 
 const Project = ({ project }) => {
   const { locale } = useRouter();

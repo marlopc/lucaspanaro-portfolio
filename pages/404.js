@@ -1,11 +1,11 @@
-import React from "react";
-import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
-import styles from "../styles/ErrorPage.module.css";
-import ArrowRight from "../components/icons/ArrowRight";
-import PageHead from "../components/PageHead";
-import { custom404Content } from "../lib/translations";
+import { useRouter } from "next/router";
+import React from "react";
+import ArrowRight from "~/components/icons/ArrowRight";
+import PageHead from "~/components/PageHead";
+import { custom404Content } from "~/lib/translations";
+import styles from "~/styles/ErrorPage.module.css";
 
 const Custom404 = () => {
   const { locale } = useRouter();
@@ -13,7 +13,7 @@ const Custom404 = () => {
 
   return (
     <>
-      <PageHead title="No encontrado - Lucas Panaro" />
+      <PageHead title="404 - Lucas Panaro" />
       <Head>
         <meta name="googlebot" content="noindex" />
       </Head>

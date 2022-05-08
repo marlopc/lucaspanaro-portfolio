@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
 import { useRouter } from "next/router";
-import styles from "../styles/Bio.module.css";
-import useObserver from "../hooks/useObserver";
-import { bioContent } from "../lib/translations";
+import React, { useRef } from "react";
+import useObserver from "~/hooks/useObserver";
+import { bioContent } from "~/lib/translations";
+import styles from "~/styles/Bio.module.css";
 
 const Bio = () => {
   const containerRef = useRef();

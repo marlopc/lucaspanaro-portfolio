@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useRefs from "./useRefs";
+import useRefs from "~/hooks/useRefs";
 
 const useStackTabs = () => {
   const [selected, setSelected] = useState("frontend");

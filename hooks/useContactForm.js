@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
-import useForm from "./useForm";
-import sendMail from "../lib/mailer/sendMail";
+import useForm from "~/hooks/useForm";
+import sendMail from "~/lib/mailer/sendMail";
 
 const initialForm = {
   name: "",

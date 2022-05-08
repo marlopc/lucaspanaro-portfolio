@@ -1,7 +1,7 @@
-import React from "react";
 import { useRouter } from "next/router";
-import styles from "../styles/Burger.module.css";
-import { navContent } from "../lib/translations";
+import React from "react";
+import { navContent } from "~/lib/translations";
+import styles from "~/styles/Burger.module.css";
 
 const Burger = React.forwardRef(function Burger(
   { closeMenu, openMenu, menuIsOpen, handleKeyDown },

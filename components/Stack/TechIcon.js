@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
-import styles from "../../styles/Stack.module.css";
-import useMediaQuery from "../../hooks/useMediaQuery";
-import ExternalLink from "../icons/ExternalLink";
-import { techIconContent } from "../../lib/translations";
+import React, { useEffect, useRef, useState } from "react";
+import ExternalLink from "~/components/icons/ExternalLink";
+import useMediaQuery from "~/hooks/useMediaQuery";
+import { techIconContent } from "~/lib/translations";
+import styles from "~/styles/Stack.module.css";
 
 const ResponsiveIcon = ({ label, href = false, icon }) => {
   const [isActive, setIsActive] = useState(false);

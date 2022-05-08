@@ -1,10 +1,10 @@
-import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import styles from "../styles/Menu.module.css";
-import PortfolioLogo from "./icons/PortfolioLogo";
-import { encodeLower } from "../lib/encode";
-import { navContent, sectionNames } from "../lib/translations";
+import React from "react";
+import PortfolioLogo from "~/components/icons/PortfolioLogo";
+import { encodeLower } from "~/lib/encode";
+import { navContent, sectionNames } from "~/lib/translations";
+import styles from "~/styles/Menu.module.css";
 
 const ResponsiveMenu = ({
   menuIsOpen,

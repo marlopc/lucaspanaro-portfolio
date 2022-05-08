@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
-import { contactContent } from "../lib/translations";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { contactContent } from "~/lib/translations";
 
 const useContactAnimation = (isSending, cb) => {
   const { locale } = useRouter();

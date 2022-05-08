@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../../styles/Stack.module.css";
+import styles from "~/styles/Stack.module.css";
 
 const PostgresIcon = () => {
   return (

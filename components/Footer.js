@@ -1,9 +1,9 @@
-import React from "react";
 import { useRouter } from "next/router";
-import styles from "../styles/Footer.module.css";
-import GitHub from "./icons/GitHub";
-import LinkedIn from "./icons/LinkedIn";
-import { footerContent } from "../lib/translations";
+import React from "react";
+import GitHub from "~/components/icons/GitHub";
+import LinkedIn from "~/components/icons/LinkedIn";
+import { footerContent } from "~/lib/translations";
+import styles from "~/styles/Footer.module.css";
 
 const Footer = () => {
   const { locale } = useRouter();

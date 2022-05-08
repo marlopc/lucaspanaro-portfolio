@@ -1,7 +1,7 @@
-import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { seoContent } from "../lib/translations";
+import React from "react";
+import { seoContent } from "~/lib/translations";
 
 const SEO = () => {
   const { locale } = useRouter();

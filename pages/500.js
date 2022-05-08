@@ -1,11 +1,11 @@
-import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import styles from "../styles/ErrorPage.module.css";
-import ArrowRight from "../components/icons/ArrowRight";
-import PageHead from "../components/PageHead";
-import { custom500Content } from "../lib/translations";
+import React from "react";
+import ArrowRight from "~/components/icons/ArrowRight";
+import PageHead from "~/components/PageHead";
+import { custom500Content } from "~/lib/translations";
+import styles from "~/styles/ErrorPage.module.css";
 
 const Custom500 = () => {
   const { locale } = useRouter();

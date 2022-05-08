@@ -1,6 +1,6 @@
 import React from "react";
-import { encodeLower } from "../lib/encode";
-import styles from "../styles/Divider.module.css";
+import { encodeLower } from "~/lib/encode";
+import styles from "~/styles/Divider.module.css";
 
 const Divider = ({ section }) => {
   return (

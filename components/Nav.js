@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
-import useMediaQuery from "../hooks/useMediaQuery";
-import useScrollEvent from "../hooks/useScrollEvent";
-import { encodeLower } from "../lib/encode";
-import { navContent, sectionNames } from "../lib/translations";
-import styles from "../styles/Nav.module.css";
-import PortfolioLogo from "./icons/PortfolioLogo";
-import NavDesktop from "./NavDesktop";
-import NavResponsive from "./NavResponsive";
+import PortfolioLogo from "~/components/icons/PortfolioLogo";
+import NavDesktop from "~/components/NavDesktop";
+import NavResponsive from "~/components/NavResponsive";
+import useMediaQuery from "~/hooks/useMediaQuery";
+import useScrollEvent from "~/hooks/useScrollEvent";
+import { encodeLower } from "~/lib/encode";
+import { navContent, sectionNames } from "~/lib/translations";
+import styles from "~/styles/Nav.module.css";
 
 const Nav = () => {
   const [isHidden, setIsHidden] = useState(false);
