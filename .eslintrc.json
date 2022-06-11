@@ -18,5 +18,10 @@
     "semi": "off",
     "padded-blocks": "off",
     "react/prop-types": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }

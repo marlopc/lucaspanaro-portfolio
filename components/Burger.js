@@ -1,45 +1,19 @@
-import { useRouter } from "next/router";
 import React from "react";
-import { navContent } from "~/lib/translations";
+import clsx from "clsx";
 import styles from "~/styles/Burger.module.css";
 
-const Burger = React.forwardRef(function Burger(
-  { closeMenu, openMenu, menuIsOpen, handleKeyDown },
-  ref
-) {
-  const { locale } = useRouter();
-  const { open, close } = navContent[locale];
-
+const Burger = ({ isOpen }) => {
   return (
-    <button
-      onKeyDown={handleKeyDown}
-      className={styles.container}
-      onClick={menuIsOpen ? closeMenu : openMenu}
-      ref={ref}
-      aria-label={menuIsOpen ? close : open}
-      aria-expanded={menuIsOpen}
+    <div
+      className={clsx(styles.container, {
+        [styles.close]: isOpen,
+      })}
     >
-      <div
-        className={menuIsOpen ? styles.burger_icon_close : styles.burger_icon}
-      >
-        <div
-          className={
-            !menuIsOpen ? styles.burger_line_1 : styles.burger_line_1_close
-          }
-        />
-        <div
-          className={
-            !menuIsOpen ? styles.burger_line_2 : styles.burger_line_2_close
-          }
-        />
-        <div
-          className={
-            !menuIsOpen ? styles.burger_line_3 : styles.burger_line_3_close
-          }
-        />
-      </div>
-    </button>
+      <div className={styles.line_1} />
+      <div className={styles.line_2} />
+      <div className={styles.line_3} />
+    </div>
   );
-});
+};
 
 export default Burger;

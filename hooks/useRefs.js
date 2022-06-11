@@ -6,7 +6,7 @@ const useRefs = () => {
   const pushRef = (ref) => {
     if (!ref || refs.current.includes(ref)) return;
 
-    refs.current.push(ref);
+    refs.current.push({ current: ref });
   };
 
   return { refs, ref: pushRef };

@@ -7,14 +7,14 @@ const useStackTabs = () => {
 
   const selectAndFocus = (index) => {
     const toElement = refs.current[index];
-    toElement.focus();
-    setSelected(toElement.id);
+    toElement.current.focus();
+    setSelected(toElement.current.id);
   };
 
   const handleKeyDown = (e) => {
     const { id } = e.target.closest("button");
     const tabEventIndex = refs.current.findIndex(
-      (tabButton) => tabButton.id === id
+      (tabButton) => tabButton.current.id === id
     );
 
     if (e.key === "ArrowLeft") {

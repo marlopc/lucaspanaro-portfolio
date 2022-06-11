@@ -1,57 +1,39 @@
 .container {
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-}
-
-.burger_icon_close {
   position: relative;
-  z-index: 2;
   width: 28px;
   height: 28px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.close {
+  z-index: 2;
   transition: -webkit-transform 150ms;
   transition: transform 150ms;
 }
 
-.burger_icon {
-  position: relative;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  flex-direction: column;
-}
-
-.burger_line_1,
-.burger_line_2,
-.burger_line_3 {
+.container > * {
   margin: 3px;
   height: 1px;
   background-color: var(--main-color);
   transition: transform 150ms;
 }
 
-.burger_line_1_close {
-  margin: 3px;
-  height: 1px;
-  background-color: var(--main-color);
-  transform: rotate(45deg) translateX(5px) translateY(5px);
+.close > .line_1 {
+  transform: rotate(45deg) translate(3px, 3px);
   transition: transform 150ms;
 }
 
-.burger_line_2_close {
+.close > .line_2 {
   display: none;
 }
 
-.burger_line_3_close {
-  margin: 3px;
-  height: 1px;
-  background-color: var(--main-color);
-  transform: rotate(-45deg);
+.close > .line_3 {
+  transform: rotate(-45deg) translate(2px, -2px);
   transition: transform 150ms;
 }
 
-.container:focus-within > .burger_icon_close {
+.container:focus-within > .close {
   outline: auto;
 }

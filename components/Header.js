@@ -23,7 +23,7 @@ const Header = ({ isLoading }) => {
       <div
         className={`${styles.intro} ${!isLoading ? styles.intro_appear : ""}`}
       >
-        <p className={styles.dev}>
+        <p className={styles.dev} lang="en">
           Web developer
           <span className={styles.devDot}>.</span>
         </p>
