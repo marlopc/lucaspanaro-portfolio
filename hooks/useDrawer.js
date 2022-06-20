@@ -159,7 +159,6 @@ const useDrawer = ({ maxWidth }) => {
       return;
     }
 
-    console.log("eee");
     setIsOpen(false);
   }, [asPath]);
 
