@@ -71,10 +71,19 @@ section {
   flex-direction: column;
   padding: 6vh 15vw;
   min-height: 95vh;
+  width: 100%;
 }
 
 p {
   line-height: 1.2em;
+}
+
+.clipped {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  font-size: 0;
 }
 
 .fade_in_up {

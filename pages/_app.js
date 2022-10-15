@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Script from "next/script";
 import React from "react";
 import Layout from "~/components/Layout";
@@ -32,32 +31,10 @@ const GoogleAnalytics = () => {
   );
 };
 
-const AppHead = () => {
-  return (
-    <Head>
-      <link
-        rel="preload"
-        href="/assets/fonts/Poppins-SemiBold.ttf"
-        as="font"
-        type="font/ttf"
-        crossOrigin="anonymous"
-      />
-      <link
-        rel="preload"
-        href="/assets/fonts/SpaceMono-Regular.ttf"
-        as="font"
-        type="font/ttf"
-        crossOrigin="anonymous"
-      />
-    </Head>
-  );
-};
-
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <GoogleAnalytics />
-      <AppHead />
       <Layout>
         <Component {...pageProps} />
       </Layout>

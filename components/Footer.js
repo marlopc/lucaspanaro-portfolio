@@ -17,26 +17,24 @@ const Footer = () => {
           <p>{secondMessage}</p>
         </div>
         <div className={styles.footer_socials}>
-          <div>
-            <a
-              href="https://www.github.com/marlopc"
-              target="_blank"
-              rel="noreferrer"
-              aria-labelledby="footer-github"
-            >
-              <span id="footer-github">Github</span>
-              <GitHub size={40} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/lucas-panaro"
-              target="_blank"
-              rel="noreferrer"
-              aria-labelledby="footer-linkedin"
-            >
-              <span id="footer-linkedin">LinkedIn</span>
-              <LinkedIn size={40} />
-            </a>
-          </div>
+          <a
+            href="https://www.github.com/marlopc"
+            target="_blank"
+            rel="noreferrer"
+            aria-labelledby="footer-github"
+          >
+            <span id="footer-github">Github</span>
+            <GitHub size={40} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/lucas-panaro"
+            target="_blank"
+            rel="noreferrer"
+            aria-labelledby="footer-linkedin"
+          >
+            <span id="footer-linkedin">LinkedIn</span>
+            <LinkedIn size={40} />
+          </a>
         </div>
       </div>
     </>

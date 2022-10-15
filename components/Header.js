@@ -10,6 +10,9 @@ const Header = ({ isLoading }) => {
 
   return (
     <div className={styles.headerContainer}>
+      <h1 className="clipped" aria-hidden>
+        Lucas Panaro | <span lang="en">Web developer</span>
+      </h1>
       <span
         className={`${styles.greeting} ${
           !isLoading ? styles.greeting_appear : ""
@@ -17,9 +20,9 @@ const Header = ({ isLoading }) => {
       >
         {greeting}
       </span>
-      <h1 className={`${styles.name} ${!isLoading ? styles.name_appear : ""}`}>
+      <h2 className={`${styles.name} ${!isLoading ? styles.name_appear : ""}`}>
         Lucas Panaro
-      </h1>
+      </h2>
       <div
         className={`${styles.intro} ${!isLoading ? styles.intro_appear : ""}`}
       >
